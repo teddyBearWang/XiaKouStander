@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2FDC0D1BCC881200BC8673 /* DamPartrolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC0C1BCC881200BC8673 /* DamPartrolCell.xib */; };
+		9F2FDC101BCC88CF00BC8673 /* SelectDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC0F1BCC88CF00BC8673 /* SelectDateCell.m */; };
+		9F2FDC131BCC899F00BC8673 /* PartrolInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC121BCC899F00BC8673 /* PartrolInfoCell.m */; };
+		9F2FDC151BCC89BE00BC8673 /* PartrolInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC141BCC89BE00BC8673 /* PartrolInfoCell.xib */; };
+		9F2FDC191BCC925000BC8673 /* forward@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC171BCC925000BC8673 /* forward@3x.png */; };
+		9F2FDC1A1BCC925000BC8673 /* next@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC181BCC925000BC8673 /* next@3x.png */; };
+		9F2FDC1D1BCC925500BC8673 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC1B1BCC925500BC8673 /* next@2x.png */; };
+		9F2FDC1E1BCC925500BC8673 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC1C1BCC925500BC8673 /* forward@2x.png */; };
+		9F2FDC211BCC96F300BC8673 /* weatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC201BCC96F300BC8673 /* weatherView.xib */; };
+		9F2FDC241BCC997400BC8673 /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC231BCC997400BC8673 /* WeatherView.m */; };
+		9F2FDC261BCC9ACC00BC8673 /* CustomHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC251BCC9ACC00BC8673 /* CustomHeader.xib */; };
+		9F2FDC291BCC9BB200BC8673 /* CusHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC281BCC9BB200BC8673 /* CusHeaderView.m */; };
+		9F2FDC2C1BCCADA400BC8673 /* CheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC2B1BCCADA400BC8673 /* CheckViewController.m */; };
+		9F2FDC2F1BCCCE3F00BC8673 /* MainItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC2E1BCCCE3F00BC8673 /* MainItemCell.m */; };
+		9F2FDC311BCCCE6000BC8673 /* MainItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC301BCCCE6000BC8673 /* MainItemCell.xib */; };
+		9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC331BCCD0BC00BC8673 /* ChildItemCell.m */; };
+		9F2FDC361BCCD0F100BC8673 /* ChildItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC351BCCD0F100BC8673 /* ChildItemCell.xib */; };
 		9F38C1971BCB8FE100989036 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1961BCB8FE100989036 /* RootViewController.m */; };
 		9F38C19A1BCB900D00989036 /* CusNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1991BCB900D00989036 /* CusNavViewController.m */; };
 		9F38C19F1BCB92B600989036 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F38C19E1BCB92B600989036 /* user@2x.png */; };
@@ -45,6 +62,30 @@
 
 /* Begin PBXFileReference section */
 		11F6F6473C424EE85CF52855 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2FDC0C1BCC881200BC8673 /* DamPartrolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DamPartrolCell.xib; sourceTree = "<group>"; };
+		9F2FDC0E1BCC88CF00BC8673 /* SelectDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDateCell.h; sourceTree = "<group>"; };
+		9F2FDC0F1BCC88CF00BC8673 /* SelectDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDateCell.m; sourceTree = "<group>"; };
+		9F2FDC111BCC899F00BC8673 /* PartrolInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartrolInfoCell.h; sourceTree = "<group>"; };
+		9F2FDC121BCC899F00BC8673 /* PartrolInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartrolInfoCell.m; sourceTree = "<group>"; };
+		9F2FDC141BCC89BE00BC8673 /* PartrolInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartrolInfoCell.xib; sourceTree = "<group>"; };
+		9F2FDC171BCC925000BC8673 /* forward@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward@3x.png"; sourceTree = "<group>"; };
+		9F2FDC181BCC925000BC8673 /* next@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@3x.png"; sourceTree = "<group>"; };
+		9F2FDC1B1BCC925500BC8673 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@2x.png"; sourceTree = "<group>"; };
+		9F2FDC1C1BCC925500BC8673 /* forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward@2x.png"; sourceTree = "<group>"; };
+		9F2FDC201BCC96F300BC8673 /* weatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = weatherView.xib; sourceTree = "<group>"; };
+		9F2FDC221BCC997400BC8673 /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
+		9F2FDC231BCC997400BC8673 /* WeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
+		9F2FDC251BCC9ACC00BC8673 /* CustomHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeader.xib; sourceTree = "<group>"; };
+		9F2FDC271BCC9BB200BC8673 /* CusHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusHeaderView.h; sourceTree = "<group>"; };
+		9F2FDC281BCC9BB200BC8673 /* CusHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusHeaderView.m; sourceTree = "<group>"; };
+		9F2FDC2A1BCCADA400BC8673 /* CheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckViewController.h; sourceTree = "<group>"; };
+		9F2FDC2B1BCCADA400BC8673 /* CheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckViewController.m; sourceTree = "<group>"; };
+		9F2FDC2D1BCCCE3F00BC8673 /* MainItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainItemCell.h; sourceTree = "<group>"; };
+		9F2FDC2E1BCCCE3F00BC8673 /* MainItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainItemCell.m; sourceTree = "<group>"; };
+		9F2FDC301BCCCE6000BC8673 /* MainItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainItemCell.xib; sourceTree = "<group>"; };
+		9F2FDC321BCCD0BC00BC8673 /* ChildItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildItemCell.h; sourceTree = "<group>"; };
+		9F2FDC331BCCD0BC00BC8673 /* ChildItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemCell.m; sourceTree = "<group>"; };
+		9F2FDC351BCCD0F100BC8673 /* ChildItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildItemCell.xib; sourceTree = "<group>"; };
 		9F38C1931BCB8EA500989036 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9F38C1951BCB8FE100989036 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9F38C1961BCB8FE100989036 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -122,6 +163,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F2FDC0B1BCC87F500BC8673 /* XiaKouShuiKu */ = {
+			isa = PBXGroup;
+			children = (
+				9F38C1BC1BCBAE8F00989036 /* DamPatrolViewController.h */,
+				9F38C1BD1BCBAE8F00989036 /* DamPatrolViewController.m */,
+				9F2FDC2A1BCCADA400BC8673 /* CheckViewController.h */,
+				9F2FDC2B1BCCADA400BC8673 /* CheckViewController.m */,
+				9F2FDC1F1BCC96C800BC8673 /* customView */,
+				9F2FDC161BCC8ACF00BC8673 /* customCell */,
+			);
+			name = XiaKouShuiKu;
+			sourceTree = "<group>";
+		};
+		9F2FDC161BCC8ACF00BC8673 /* customCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F2FDC0C1BCC881200BC8673 /* DamPartrolCell.xib */,
+				9F2FDC0E1BCC88CF00BC8673 /* SelectDateCell.h */,
+				9F2FDC0F1BCC88CF00BC8673 /* SelectDateCell.m */,
+				9F2FDC111BCC899F00BC8673 /* PartrolInfoCell.h */,
+				9F2FDC121BCC899F00BC8673 /* PartrolInfoCell.m */,
+				9F2FDC141BCC89BE00BC8673 /* PartrolInfoCell.xib */,
+				9F2FDC2D1BCCCE3F00BC8673 /* MainItemCell.h */,
+				9F2FDC2E1BCCCE3F00BC8673 /* MainItemCell.m */,
+				9F2FDC301BCCCE6000BC8673 /* MainItemCell.xib */,
+				9F2FDC321BCCD0BC00BC8673 /* ChildItemCell.h */,
+				9F2FDC331BCCD0BC00BC8673 /* ChildItemCell.m */,
+				9F2FDC351BCCD0F100BC8673 /* ChildItemCell.xib */,
+			);
+			name = customCell;
+			sourceTree = "<group>";
+		};
+		9F2FDC1F1BCC96C800BC8673 /* customView */ = {
+			isa = PBXGroup;
+			children = (
+				9F2FDC201BCC96F300BC8673 /* weatherView.xib */,
+				9F2FDC221BCC997400BC8673 /* WeatherView.h */,
+				9F2FDC231BCC997400BC8673 /* WeatherView.m */,
+				9F2FDC251BCC9ACC00BC8673 /* CustomHeader.xib */,
+				9F2FDC271BCC9BB200BC8673 /* CusHeaderView.h */,
+				9F2FDC281BCC9BB200BC8673 /* CusHeaderView.m */,
+			);
+			name = customView;
+			sourceTree = "<group>";
+		};
 		9F38C1941BCB8FA900989036 /* CustomCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +222,8 @@
 		9F38C19C1BCB92A000989036 /* image@2x */ = {
 			isa = PBXGroup;
 			children = (
+				9F2FDC1B1BCC925500BC8673 /* next@2x.png */,
+				9F2FDC1C1BCC925500BC8673 /* forward@2x.png */,
 				9F38C1B21BCB9CEF00989036 /* rain@2x.png */,
 				9F38C19E1BCB92B600989036 /* user@2x.png */,
 				9F38C1B01BCB9CE700989036 /* qixiang@2x.png */,
@@ -147,6 +235,8 @@
 		9F38C19D1BCB92AB00989036 /* image@3x */ = {
 			isa = PBXGroup;
 			children = (
+				9F2FDC171BCC925000BC8673 /* forward@3x.png */,
+				9F2FDC181BCC925000BC8673 /* next@3x.png */,
 				9F38C1B41BCB9D0000989036 /* qixiang@3x.png */,
 				9F38C1B61BCB9D0800989036 /* rain@3x.png */,
 				9F38C1A41BCB92E400989036 /* password@3x.png */,
@@ -180,8 +270,6 @@
 			children = (
 				9F38C1B91BCB9F7000989036 /* ReseriorViewController.h */,
 				9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */,
-				9F38C1BC1BCBAE8F00989036 /* DamPatrolViewController.h */,
-				9F38C1BD1BCBAE8F00989036 /* DamPatrolViewController.m */,
 			);
 			name = BaiShuikeng;
 			sourceTree = "<group>";
@@ -217,6 +305,7 @@
 				9F52F4561BAA51080073F72E /* ViewController.m */,
 				9F52F4581BAA51080073F72E /* Main.storyboard */,
 				9F52F45B1BAA51080073F72E /* Images.xcassets */,
+				9F2FDC0B1BCC87F500BC8673 /* XiaKouShuiKu */,
 				9F38C1B81BCB9EFD00989036 /* BaiShuikeng */,
 				9F52F44E1BAA51080073F72E /* Supporting Files */,
 			);
@@ -353,17 +442,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2FDC211BCC96F300BC8673 /* weatherView.xib in Resources */,
 				9F38C1B31BCB9CEF00989036 /* rain@2x.png in Resources */,
 				9F38C1A11BCB92BB00989036 /* user@3x.png in Resources */,
 				9F52F45A1BAA51080073F72E /* Main.storyboard in Resources */,
+				9F2FDC191BCC925000BC8673 /* forward@3x.png in Resources */,
 				9F52F45C1BAA51080073F72E /* Images.xcassets in Resources */,
+				9F2FDC151BCC89BE00BC8673 /* PartrolInfoCell.xib in Resources */,
 				9F38C1B51BCB9D0000989036 /* qixiang@3x.png in Resources */,
+				9F2FDC0D1BCC881200BC8673 /* DamPartrolCell.xib in Resources */,
+				9F2FDC1E1BCC925500BC8673 /* forward@2x.png in Resources */,
+				9F2FDC1A1BCC925000BC8673 /* next@3x.png in Resources */,
 				9F38C1A31BCB92DF00989036 /* password@2x.png in Resources */,
 				9F38C1AC1BCB988600989036 /* ItemCell.xib in Resources */,
 				9F9B68701BAA5B0C005B049E /* SVProgressHUD.bundle in Resources */,
+				9F2FDC1D1BCC925500BC8673 /* next@2x.png in Resources */,
 				9F38C19F1BCB92B600989036 /* user@2x.png in Resources */,
 				9F38C1A51BCB92E400989036 /* password@3x.png in Resources */,
+				9F2FDC261BCC9ACC00BC8673 /* CustomHeader.xib in Resources */,
 				9F38C1B11BCB9CE700989036 /* qixiang@2x.png in Resources */,
+				9F2FDC361BCCD0F100BC8673 /* ChildItemCell.xib in Resources */,
+				9F2FDC311BCCCE6000BC8673 /* MainItemCell.xib in Resources */,
 				9F38C1B71BCB9D0800989036 /* rain@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,13 +517,20 @@
 				9F52F4571BAA51080073F72E /* ViewController.m in Sources */,
 				9F9B68711BAA5B0C005B049E /* SVProgressHUD.m in Sources */,
 				9F52F4541BAA51080073F72E /* AppDelegate.m in Sources */,
+				9F2FDC241BCC997400BC8673 /* WeatherView.m in Sources */,
 				9F52F4511BAA51080073F72E /* main.m in Sources */,
+				9F2FDC131BCC899F00BC8673 /* PartrolInfoCell.m in Sources */,
 				9F38C1AF1BCB994300989036 /* ItemCell.m in Sources */,
 				9F38C1A81BCB94DD00989036 /* MainViewController.m in Sources */,
 				9F38C19A1BCB900D00989036 /* CusNavViewController.m in Sources */,
 				9F38C1BE1BCBAE8F00989036 /* DamPatrolViewController.m in Sources */,
+				9F2FDC101BCC88CF00BC8673 /* SelectDateCell.m in Sources */,
 				9F38C1971BCB8FE100989036 /* RootViewController.m in Sources */,
 				9F38C1BB1BCB9F7000989036 /* ReseriorViewController.m in Sources */,
+				9F2FDC2F1BCCCE3F00BC8673 /* MainItemCell.m in Sources */,
+				9F2FDC2C1BCCADA400BC8673 /* CheckViewController.m in Sources */,
+				9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */,
+				9F2FDC291BCC9BB200BC8673 /* CusHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -74,7 +74,7 @@
     switch (indexPath.row) {
         case 0:
         {
-         //   [self performSegueWithIdentifier:@"" sender:nil];
+            [self performSegueWithIdentifier:@"damPartrol" sender:nil];
         }
             break;
         case 1:

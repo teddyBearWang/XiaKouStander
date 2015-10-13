@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--登陆-->
@@ -144,12 +145,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 杭州定川信息技术有限公司" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRs-7x-kyh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="© 杭州定川信息技术有限公司" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRs-7x-kyh">
                                 <rect key="frame" x="49" y="547" width="223" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bW8-5C-Lsf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -240,15 +241,17 @@
                             <constraint firstAttribute="bottom" secondItem="4UY-OA-1Xs" secondAttribute="bottom" id="sGT-Ve-jTO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="白水坑水库" id="awG-mk-YCv"/>
+                    <navigationItem key="navigationItem" title="白水坑水库" id="awG-mk-YCv">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="48d-L7-p6m"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="4UY-OA-1Xs" id="p7h-hs-Hcs"/>
-                        <segue destination="GGc-6Y-oH8" kind="push" id="KYR-To-1oT"/>
+                        <segue destination="GGc-6Y-oH8" kind="push" identifier="damPartrol" id="KYR-To-1oT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNa-Ds-e97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-374" y="993"/>
+            <point key="canvasLocation" x="-620" y="1022"/>
         </scene>
         <!--大坝巡视检查记录表-->
         <scene sceneID="Yez-XL-TNc">
@@ -296,15 +299,80 @@
                             <constraint firstAttribute="centerX" secondItem="mR3-NP-2Wu" secondAttribute="centerX" id="yaV-Lb-Ohj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="大坝巡视检查记录表" id="6hj-0D-ddn"/>
+                    <navigationItem key="navigationItem" title="大坝巡视检查记录表" id="6hj-0D-ddn">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="Nqt-Kd-PFY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirm_btn" destination="mR3-NP-2Wu" id="6wH-PE-jxS"/>
                         <outlet property="detailTable" destination="X6P-lx-jcf" id="pEQ-rp-Hu9"/>
+                        <segue destination="auO-cX-aMb" kind="push" identifier="checkContent" id="LES-tw-ece"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCO-ye-sLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="985"/>
+            <point key="canvasLocation" x="-240" y="1010"/>
+        </scene>
+        <!--检查内容-->
+        <scene sceneID="OHy-6H-jzn">
+            <objects>
+                <viewController id="auO-cX-aMb" customClass="CheckViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="taz-yA-kcQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="9p5-5y-3fV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pvQ-PB-Hmq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ei9-SQ-E7H">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="N7d-Lr-cVG"/>
+                                </constraints>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUs-Fx-gRo">
+                                <rect key="frame" x="100" y="64" width="220" height="417"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="417" id="LIm-0n-Lda"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WU-bZ-QOl">
+                                <rect key="frame" x="110" y="500" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.06853016596" green="0.82679098679999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickAddButtonAction:" destination="auO-cX-aMb" eventType="touchUpInside" id="81v-nZ-r07"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9WU-bZ-QOl" firstAttribute="leading" secondItem="ei9-SQ-E7H" secondAttribute="trailing" constant="10" id="28C-Ub-YJf"/>
+                            <constraint firstItem="fUs-Fx-gRo" firstAttribute="top" secondItem="pvQ-PB-Hmq" secondAttribute="top" constant="64" id="4bx-Lm-S3N"/>
+                            <constraint firstItem="ei9-SQ-E7H" firstAttribute="leading" secondItem="pvQ-PB-Hmq" secondAttribute="leading" id="5ti-wG-X9A"/>
+                            <constraint firstAttribute="trailing" secondItem="fUs-Fx-gRo" secondAttribute="trailing" id="Ehc-O4-r6F"/>
+                            <constraint firstAttribute="bottom" secondItem="ei9-SQ-E7H" secondAttribute="bottom" id="GNm-VT-aGi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9WU-bZ-QOl" secondAttribute="trailing" constant="-6" id="VD2-9x-90a"/>
+                            <constraint firstItem="9WU-bZ-QOl" firstAttribute="top" secondItem="fUs-Fx-gRo" secondAttribute="bottom" constant="19" id="eAU-9b-mL3"/>
+                            <constraint firstItem="9p5-5y-3fV" firstAttribute="top" secondItem="9WU-bZ-QOl" secondAttribute="bottom" constant="28" id="t6T-Va-RHz"/>
+                            <constraint firstItem="ei9-SQ-E7H" firstAttribute="top" secondItem="pvQ-PB-Hmq" secondAttribute="top" id="tpu-Cq-nzz"/>
+                            <constraint firstItem="fUs-Fx-gRo" firstAttribute="leading" secondItem="ei9-SQ-E7H" secondAttribute="trailing" id="wuR-bX-hL3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="检查内容" id="RKO-sU-fpy"/>
+                    <connections>
+                        <outlet property="addButton" destination="9WU-bZ-QOl" id="7kJ-ji-FhE"/>
+                        <outlet property="childTable" destination="fUs-Fx-gRo" id="tGk-lO-IZN"/>
+                        <outlet property="mainTable" destination="ei9-SQ-E7H" id="a32-hW-l22"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6TL-kr-e5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236" y="1022"/>
         </scene>
         <!--Cus Nav View Controller-->
         <scene sceneID="6aC-YL-zfA">

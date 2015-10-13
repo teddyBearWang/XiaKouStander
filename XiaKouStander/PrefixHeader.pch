@@ -12,6 +12,13 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+//背景颜色
 #define BG_COLOR [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0f]
+
+//cell的背景颜色
+#define CELL_BG_COLOR [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0f]
+
+//检查内容里面指示视图的颜色
+#define CELL_INTRUCTION_COLOR [UIColor colorWithRed:50/255.0 green:146/255.0 blue:232/255.0 alpha:1.0f]
 
 #endif
