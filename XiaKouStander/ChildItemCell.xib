@@ -13,16 +13,26 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5og-oD-tfX" id="hgd-wn-H6r">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="爆破/炸鱼/采石/取土" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07F-gQ-jNY">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爆破/炸鱼/采石/取土" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07F-gQ-jNY">
                         <rect key="frame" x="8" y="14" width="150" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="k60-cj-ckW"/>
+                            <constraint firstAttribute="width" constant="150" id="kfr-be-bUP"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7O-Zx-wzm">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7O-Zx-wzm">
                         <rect key="frame" x="163" y="9" width="51" height="31"/>
                     </switch>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="L7O-Zx-wzm" firstAttribute="top" secondItem="hgd-wn-H6r" secondAttribute="top" constant="9" id="Btd-qf-gGw"/>
+                    <constraint firstItem="07F-gQ-jNY" firstAttribute="top" secondItem="hgd-wn-H6r" secondAttribute="top" constant="14" id="chQ-1D-Ws0"/>
+                    <constraint firstItem="07F-gQ-jNY" firstAttribute="leading" secondItem="hgd-wn-H6r" secondAttribute="leading" constant="8" id="epB-hr-zOm"/>
+                    <constraint firstAttribute="trailing" secondItem="L7O-Zx-wzm" secondAttribute="trailing" constant="8" id="hFm-Cy-9dH"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="tapSelect" destination="L7O-Zx-wzm" id="PsG-ql-vsL"/>

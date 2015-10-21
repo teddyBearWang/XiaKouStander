@@ -57,7 +57,16 @@
     myCell.itemImageView.image = [UIImage imageNamed:_itemList[indexPath.row]];
     myCell.itemImageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    myCell.itemNameLabel.text = @"白水坑水库";
+    switch (indexPath.row) {
+        case 0:
+            myCell.itemNameLabel.text = @"白水坑水库";
+            break;
+        case 1:
+            myCell.itemNameLabel.text = @"峡口水库";
+            break;
+        default:
+            break;
+    }
 
     return myCell;
     
@@ -84,7 +93,7 @@
             break;
         case 1:
         {
-            
+           [self performSegueWithIdentifier:@"xiakou" sender:nil]; 
         }
             break;
         default:
