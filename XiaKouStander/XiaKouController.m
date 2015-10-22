@@ -80,26 +80,31 @@
             break;
         case 1:
         {
+            //大坝巡查
             [self performSegueWithIdentifier:@"damPartrol" sender:nil];
         }
             break;
         case 2:
         {
+            //钢闸门
             [self performSegueWithIdentifier:@"steelGate" sender:nil];
         }
             break;
         case 3:
         {
-            //[self performSegueWithIdentifier:@"steelGate" sender:nil];
+            //水情遥测
+            [self performSegueWithIdentifier:@"waterTelemetry" sender:nil];
         }
             break;
         case 4:
         {
-           // [self performSegueWithIdentifier:@"valve" sender:nil];
+            //闸门
+            [self performSegueWithIdentifier:@"gate" sender:nil];
         }
             break;
         case 5:
         {
+            //锥形阀
             [self performSegueWithIdentifier:@"valve" sender:nil];
         }
             break;

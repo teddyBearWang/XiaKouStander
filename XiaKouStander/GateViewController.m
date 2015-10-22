@@ -1,47 +1,45 @@
 //
-//  SteelGateController.m
+//  GateViewController.m
 //  XiaKouStander
-//  **********钢闸门*********
-//  Created by teddy on 15/10/21.
+//  *********闸门*****
+//  Created by teddy on 15/10/22.
 //  Copyright (c) 2015年 teddy. All rights reserved.
 //
 
-#import "SteelGateController.h"
+#import "GateViewController.h"
 #import "SelectDateCell.h"
+#import "PartrolInfoCell.h"
 #import "WeatherView.h"
 #import "CusHeaderView.h"
 #import "ChildItemCell.h"
-#import "PartrolInfoCell.h"
 
-@interface SteelGateController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface GateViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 {
-    NSString *_currentDate;//选择时间
-    NSArray *_infoList;//巡查信息记录
+    NSArray *_infoList;//巡查信息
+    NSString *_currentDate;
 }
 
-//上传按钮
-@property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
-//列表
 @property (weak, nonatomic) IBOutlet UITableView *gateTable;
 
-//上传事件
-- (IBAction)uploadAction:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
+- (IBAction)saveUploadAction:(id)sender;
 @end
 
-@implementation SteelGateController
+@implementation GateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.gateTable.dataSource = self;
     self.gateTable.delegate = self;
+    self.gateTable.dataSource = self;
     self.gateTable.backgroundColor = CELL_BG_COLOR;
-    _infoList = @[@"是否需要审批",@"检查人员",@"复核人员",@"负责人"];
     
+    _infoList = @[@"是否需要审批",@"检查人员",@"复核人员"];
     //默认为当天的日期
     _currentDate = [self getCurrentDate:[NSDate date]];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,7 +84,7 @@
             break;
         case 2:
         {
-            return 4;
+            return _infoList.count;
         }
             break;
         default:
@@ -115,6 +113,7 @@
             break;
         case 1:
         {
+            
             if (indexPath.row == 0) {
                 //闸门名称
                 PartrolInfoCell *partrolCell = (PartrolInfoCell *)[[[NSBundle mainBundle] loadNibNamed:@"PartrolInfoCell" owner:nil options:nil] lastObject];
@@ -123,9 +122,10 @@
                 partrolCell.valueField.returnKeyType = UIReturnKeyDone;
                 partrolCell.valueField.backgroundColor = CELL_BG_COLOR;
                 partrolCell.valueField.delegate = self;
+                
                 partrolCell.postionLabel.font = [UIFont systemFontOfSize:15];
-                partrolCell.postionLabel.text = @" 闸门名称";
-                partrolCell.valueField.placeholder = @"请输入闸门名称";
+                partrolCell.postionLabel.text = @" 水位";
+                partrolCell.valueField.placeholder = @"请输入水位(米)";
                 return partrolCell;
             }else{
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -135,6 +135,7 @@
                 cell.textLabel.font = [UIFont systemFontOfSize:15];
                 return cell;
             }
+
         }
             break;
         case 2:
@@ -143,11 +144,10 @@
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
                 cell.selectionStyle = UITableViewCellSelectionStyleBlue;
                 cell.textLabel.font = [UIFont systemFontOfSize:15];
-               // if (indexPath.row == 2) {
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-               // }
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.textLabel.text = [NSString stringWithFormat:@"  %@",_infoList[indexPath.row]];
                 cell.backgroundColor = CELL_BG_COLOR;
+                
                 return cell;
             }else{
                 //子列表
@@ -196,13 +196,6 @@
         case 2:
         {
             CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"处理结果上报";
-            return header;
-        }
-            break;
-        case 3:
-        {
-            CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
             header.titleLabel.text = @"巡查信息记录";
             return header;
         }
@@ -218,10 +211,9 @@ static int _selectRow; //选择第几行
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
-            [self performSegueWithIdentifier:@"steelCheck" sender:nil];
+            [self performSegueWithIdentifier:@"gateContent" sender:nil];
             _selectRow = (int)indexPath.row;
         }
-
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -273,14 +265,13 @@ static int _selectRow; //选择第几行
     [self.gateTable reloadData];
 }
 
-#pragma mark - UITextFieldDelegate
-
+#pragma mark - UItextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
-- (IBAction)uploadAction:(id)sender {
+- (IBAction)saveUploadAction:(id)sender {
 }
 @end

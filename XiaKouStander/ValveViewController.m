@@ -67,7 +67,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -80,16 +80,12 @@
             break;
         case 1:
         {
-            return 1;
+            return 2;
         }
             break;
         case 2:
         {
-            return 1;
-        }
-            break;
-        case 3:{
-            return _partrolItems.count;
+             return _partrolItems.count;
         }
             break;
         default:
@@ -118,30 +114,27 @@
             break;
         case 1:
         {
+            
             UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-           cell.textLabel.text = @"  设备巡查";
             cell.backgroundColor = CELL_BG_COLOR;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.textLabel.font = [UIFont systemFontOfSize:15];
+            if (indexPath.row == 0) {
+ 
+                cell.textLabel.text = @"  设备巡查";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }else{
+                cell.textLabel.text = @"  新增处理结果";
+                
+                UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                addButton.frame = (CGRect){cell.contentView.frame.size.width - 30 -10 ,7,30,30};
+                [addButton setBackgroundImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+                [addButton addTarget:self action:@selector(addResultsAction:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.contentView addSubview:addButton];
+            }
             return cell;
         }
             break;
         case 2:
-        {
-            UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            cell.textLabel.text = @"  新增处理结果";
-            cell.backgroundColor = CELL_BG_COLOR;
-            cell.textLabel.font = [UIFont systemFontOfSize:15];
-            
-            UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            addButton.frame = (CGRect){cell.contentView.frame.size.width - 30 -10 ,7,30,30};
-            [addButton setBackgroundImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-            [addButton addTarget:self action:@selector(addResultsAction:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.contentView addSubview:addButton];
-            return cell;
-        }
-            break;
-        case 3:
         {
             if (indexPath.row == 2) {
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -200,13 +193,6 @@
         case 2:
         {
             CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"处理结果上报";
-            return header;
-        }
-            break;
-        case 3:
-        {
-            CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
             header.titleLabel.text = @"巡查信息记录";
             return header;
         }
@@ -221,8 +207,10 @@ static int _selectRow; //选择第几行
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        [self performSegueWithIdentifier:@"valveContent" sender:nil];
-        _selectRow = (int)indexPath.row;
+        if (indexPath.row == 0) {
+            [self performSegueWithIdentifier:@"valveContent" sender:nil];
+            _selectRow = (int)indexPath.row;
+        }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

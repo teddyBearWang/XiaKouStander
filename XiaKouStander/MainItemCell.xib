@@ -18,13 +18,13 @@
                         <rect key="frame" x="4" y="3" width="96" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上游面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOp-EY-Xof">
-                                <rect key="frame" x="22" y="6" width="74" height="30"/>
+                                <rect key="frame" x="8" y="6" width="88" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-na-Ze1">
-                                <rect key="frame" x="8" y="7" width="6" height="30"/>
+                                <rect key="frame" x="3" y="7" width="3" height="30"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

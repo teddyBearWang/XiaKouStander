@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="巡查信息记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHr-hV-Op8">
-                    <rect key="frame" x="26" y="4" width="102" height="21"/>
+                    <rect key="frame" x="26" y="4" width="260" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.16078431372549021" green="0.57647058823529407" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>

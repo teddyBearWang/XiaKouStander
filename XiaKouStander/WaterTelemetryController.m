@@ -1,47 +1,45 @@
 //
-//  SteelGateController.m
+//  WaterTelemetryController.m
 //  XiaKouStander
-//  **********钢闸门*********
-//  Created by teddy on 15/10/21.
+//  *******水情遥测***********
+//  Created by teddy on 15/10/22.
 //  Copyright (c) 2015年 teddy. All rights reserved.
 //
 
-#import "SteelGateController.h"
+#import "WaterTelemetryController.h"
 #import "SelectDateCell.h"
+#import "PartrolInfoCell.h"
 #import "WeatherView.h"
 #import "CusHeaderView.h"
 #import "ChildItemCell.h"
-#import "PartrolInfoCell.h"
 
-@interface SteelGateController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface WaterTelemetryController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 {
-    NSString *_currentDate;//选择时间
-    NSArray *_infoList;//巡查信息记录
+    NSArray *_infoList;//巡查信息
+    NSString *_currentDate;
 }
 
-//上传按钮
+@property (weak, nonatomic) IBOutlet UITableView *detailTable;
+
 @property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
-//列表
-@property (weak, nonatomic) IBOutlet UITableView *gateTable;
-
-//上传事件
-- (IBAction)uploadAction:(id)sender;
-
+- (IBAction)saveUploadAction:(id)sender;
 @end
 
-@implementation SteelGateController
+@implementation WaterTelemetryController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.gateTable.dataSource = self;
-    self.gateTable.delegate = self;
-    self.gateTable.backgroundColor = CELL_BG_COLOR;
-    _infoList = @[@"是否需要审批",@"检查人员",@"复核人员",@"负责人"];
+    self.detailTable.delegate = self;
+    self.detailTable.dataSource = self;
+    self.detailTable.backgroundColor = CELL_BG_COLOR;
     
+    _infoList = @[@"是否需要审批",@"维护人"];
     //默认为当天的日期
     _currentDate = [self getCurrentDate:[NSDate date]];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,13 +53,13 @@
     
 #ifdef __IPHONE_8_0
     if ([[[UIDevice currentDevice] systemVersion] floatValue] > 8.0) {
-        if ([self.gateTable respondsToSelector:@selector(setLayoutMargins:)]) {
-            [self.gateTable setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
+        if ([self.detailTable respondsToSelector:@selector(setLayoutMargins:)]) {
+            [self.detailTable setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
         }
     }
 #endif
-    if ([self.gateTable respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self.gateTable setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    if ([self.detailTable respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.detailTable setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     }
 }
 
@@ -86,7 +84,7 @@
             break;
         case 2:
         {
-            return 4;
+            return _infoList.count;
         }
             break;
         default:
@@ -115,6 +113,7 @@
             break;
         case 1:
         {
+            
             if (indexPath.row == 0) {
                 //闸门名称
                 PartrolInfoCell *partrolCell = (PartrolInfoCell *)[[[NSBundle mainBundle] loadNibNamed:@"PartrolInfoCell" owner:nil options:nil] lastObject];
@@ -123,18 +122,20 @@
                 partrolCell.valueField.returnKeyType = UIReturnKeyDone;
                 partrolCell.valueField.backgroundColor = CELL_BG_COLOR;
                 partrolCell.valueField.delegate = self;
+                
                 partrolCell.postionLabel.font = [UIFont systemFontOfSize:15];
-                partrolCell.postionLabel.text = @" 闸门名称";
-                partrolCell.valueField.placeholder = @"请输入闸门名称";
+                partrolCell.postionLabel.text = @" 水位";
+                partrolCell.valueField.placeholder = @"请输入水位(米)";
                 return partrolCell;
             }else{
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-                cell.textLabel.text = @"  设备巡查";
+                cell.textLabel.text = @"  设备事项";
                 cell.backgroundColor = CELL_BG_COLOR;
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.textLabel.font = [UIFont systemFontOfSize:15];
                 return cell;
             }
+            
         }
             break;
         case 2:
@@ -143,11 +144,10 @@
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
                 cell.selectionStyle = UITableViewCellSelectionStyleBlue;
                 cell.textLabel.font = [UIFont systemFontOfSize:15];
-               // if (indexPath.row == 2) {
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-               // }
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.textLabel.text = [NSString stringWithFormat:@"  %@",_infoList[indexPath.row]];
                 cell.backgroundColor = CELL_BG_COLOR;
+                
                 return cell;
             }else{
                 //子列表
@@ -196,13 +196,6 @@
         case 2:
         {
             CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"处理结果上报";
-            return header;
-        }
-            break;
-        case 3:
-        {
-            CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
             header.titleLabel.text = @"巡查信息记录";
             return header;
         }
@@ -218,10 +211,9 @@ static int _selectRow; //选择第几行
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
-            [self performSegueWithIdentifier:@"steelCheck" sender:nil];
+            [self performSegueWithIdentifier:@"gateContent" sender:nil];
             _selectRow = (int)indexPath.row;
         }
-
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -261,7 +253,7 @@ static int _selectRow; //选择第几行
     NSDate *date = [self stringToDate:_currentDate];
     NSDate *forwardDate = [date dateByAddingTimeInterval:-60*60*24];
     _currentDate = [self getCurrentDate:forwardDate];
-    [self.gateTable reloadData];
+    [self.detailTable reloadData];
 }
 
 //后一天
@@ -270,17 +262,16 @@ static int _selectRow; //选择第几行
     NSDate *date = [self stringToDate:_currentDate];
     NSDate *forwardDate = [date dateByAddingTimeInterval:60*60*24];
     _currentDate = [self getCurrentDate:forwardDate];
-    [self.gateTable reloadData];
+    [self.detailTable reloadData];
 }
 
-#pragma mark - UITextFieldDelegate
-
+#pragma mark - UItextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
-- (IBAction)uploadAction:(id)sender {
+- (IBAction)saveUploadAction:(id)sender {
 }
 @end

@@ -14,4 +14,7 @@
 
 //文字
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
+
+//赋值
+- (void)setLabelContext:(NSString *)name;
 @end

@@ -32,7 +32,7 @@
     self.itemCollection.delegate = self;
     self.itemCollection.dataSource = self;
     self.itemCollection.backgroundColor = BG_COLOR;
-    _itemList = [NSMutableArray arrayWithObjects:@"rain",@"qixiang", nil];
+    _itemList = [NSMutableArray arrayWithObjects:@"rain",@"qixiang",@"rain",@"qixiang", nil];
     
     //必须注册，否则会崩溃
     [self.itemCollection registerNib:[UINib nibWithNibName:@"ItemCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"itemCell"];
@@ -64,6 +64,12 @@
         case 1:
             myCell.itemNameLabel.text = @"峡口水库";
             break;
+        case 2:
+            myCell.itemNameLabel.text = @"电站";
+            break;
+        case 3:
+            myCell.itemNameLabel.text = @"渠道";
+            break;
         default:
             break;
     }
@@ -77,10 +83,11 @@
     return CGSizeMake(100, 100);
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(20, 8, 10, 8);
-}
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+//{
+//    return UIEdgeInsetsMake(20, 8, 10, 8);
+//}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -94,6 +101,11 @@
         case 1:
         {
            [self performSegueWithIdentifier:@"xiakou" sender:nil]; 
+        }
+            break;
+        case 2:
+        {
+            [self performSegueWithIdentifier:@"powerStation" sender:nil];
         }
             break;
         default:

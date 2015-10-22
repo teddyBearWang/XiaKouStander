@@ -39,6 +39,16 @@
 		9F38C1B71BCB9D0800989036 /* rain@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F38C1B61BCB9D0800989036 /* rain@3x.png */; };
 		9F38C1BB1BCB9F7000989036 /* ReseriorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */; };
 		9F38C1BE1BCBAE8F00989036 /* DamPatrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1BD1BCBAE8F00989036 /* DamPatrolViewController.m */; };
+		9F3B28511BD889B2009139E6 /* GateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28501BD889B2009139E6 /* GateViewController.m */; };
+		9F3B28541BD8A2E6009139E6 /* GateContentCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28531BD8A2E6009139E6 /* GateContentCheckController.m */; };
+		9F3B28581BD8A85C009139E6 /* WaterTelemetryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28571BD8A85C009139E6 /* WaterTelemetryController.m */; };
+		9F3B285C1BD8B490009139E6 /* PowerStationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B285B1BD8B490009139E6 /* PowerStationController.m */; };
+		9F3B285F1BD8C1EC009139E6 /* RegularInspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B285E1BD8C1EC009139E6 /* RegularInspectionController.m */; };
+		9F3B28621BD8C3C3009139E6 /* RightLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B28611BD8C3C3009139E6 /* RightLabelCell.xib */; };
+		9F3B28651BD8C428009139E6 /* RightLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28641BD8C428009139E6 /* RightLabelCell.m */; };
+		9F3B28681BD8CEB1009139E6 /* RegularTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28671BD8CEB1009139E6 /* RegularTestController.m */; };
+		9F3B286B1BD8D5AC009139E6 /* MachineCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B286A1BD8D5AC009139E6 /* MachineCheckController.m */; };
+		9F3B286E1BD8DF78009139E6 /* RotatingEquipmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B286D1BD8DF78009139E6 /* RotatingEquipmentController.m */; };
 		9F48EA4A1BD72880001BE8B4 /* XiaKouController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48EA491BD72880001BE8B4 /* XiaKouController.m */; };
 		9F48EA4F1BD72C56001BE8B4 /* ValveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48EA4E1BD72C56001BE8B4 /* ValveViewController.m */; };
 		9F48EA531BD74A4B001BE8B4 /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F48EA521BD74A4B001BE8B4 /* add@3x.png */; };
@@ -115,6 +125,25 @@
 		9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReseriorViewController.m; sourceTree = "<group>"; };
 		9F38C1BC1BCBAE8F00989036 /* DamPatrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DamPatrolViewController.h; sourceTree = "<group>"; };
 		9F38C1BD1BCBAE8F00989036 /* DamPatrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DamPatrolViewController.m; sourceTree = "<group>"; };
+		9F3B284F1BD889B2009139E6 /* GateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateViewController.h; sourceTree = "<group>"; };
+		9F3B28501BD889B2009139E6 /* GateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateViewController.m; sourceTree = "<group>"; };
+		9F3B28521BD8A2E6009139E6 /* GateContentCheckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateContentCheckController.h; sourceTree = "<group>"; };
+		9F3B28531BD8A2E6009139E6 /* GateContentCheckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateContentCheckController.m; sourceTree = "<group>"; };
+		9F3B28561BD8A85C009139E6 /* WaterTelemetryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterTelemetryController.h; sourceTree = "<group>"; };
+		9F3B28571BD8A85C009139E6 /* WaterTelemetryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterTelemetryController.m; sourceTree = "<group>"; };
+		9F3B285A1BD8B490009139E6 /* PowerStationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerStationController.h; sourceTree = "<group>"; };
+		9F3B285B1BD8B490009139E6 /* PowerStationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerStationController.m; sourceTree = "<group>"; };
+		9F3B285D1BD8C1EC009139E6 /* RegularInspectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularInspectionController.h; sourceTree = "<group>"; };
+		9F3B285E1BD8C1EC009139E6 /* RegularInspectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularInspectionController.m; sourceTree = "<group>"; };
+		9F3B28611BD8C3C3009139E6 /* RightLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightLabelCell.xib; sourceTree = "<group>"; };
+		9F3B28631BD8C428009139E6 /* RightLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightLabelCell.h; sourceTree = "<group>"; };
+		9F3B28641BD8C428009139E6 /* RightLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightLabelCell.m; sourceTree = "<group>"; };
+		9F3B28661BD8CEB1009139E6 /* RegularTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularTestController.h; sourceTree = "<group>"; };
+		9F3B28671BD8CEB1009139E6 /* RegularTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularTestController.m; sourceTree = "<group>"; };
+		9F3B28691BD8D5AC009139E6 /* MachineCheckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachineCheckController.h; sourceTree = "<group>"; };
+		9F3B286A1BD8D5AC009139E6 /* MachineCheckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineCheckController.m; sourceTree = "<group>"; };
+		9F3B286C1BD8DF78009139E6 /* RotatingEquipmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingEquipmentController.h; sourceTree = "<group>"; };
+		9F3B286D1BD8DF78009139E6 /* RotatingEquipmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingEquipmentController.m; sourceTree = "<group>"; };
 		9F48EA481BD72880001BE8B4 /* XiaKouController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaKouController.h; sourceTree = "<group>"; };
 		9F48EA491BD72880001BE8B4 /* XiaKouController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaKouController.m; sourceTree = "<group>"; };
 		9F48EA4D1BD72C56001BE8B4 /* ValveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValveViewController.h; sourceTree = "<group>"; };
@@ -273,16 +302,64 @@
 			name = CustomCell;
 			sourceTree = "<group>";
 		};
-		9F38C1B81BCB9EFD00989036 /* BaiShuikeng */ = {
+		9F38C1B81BCB9EFD00989036 /* 白水坑 */ = {
 			isa = PBXGroup;
 			children = (
 				9F38C1B91BCB9F7000989036 /* ReseriorViewController.h */,
 				9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */,
 			);
-			name = BaiShuikeng;
+			name = "白水坑";
 			sourceTree = "<group>";
 		};
-		9F48EA471BD7284B001BE8B4 /* XiakouShuiku  */ = {
+		9F3B284E1BD8894A009139E6 /* 闸门 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B284F1BD889B2009139E6 /* GateViewController.h */,
+				9F3B28501BD889B2009139E6 /* GateViewController.m */,
+				9F3B28521BD8A2E6009139E6 /* GateContentCheckController.h */,
+				9F3B28531BD8A2E6009139E6 /* GateContentCheckController.m */,
+			);
+			name = "闸门";
+			sourceTree = "<group>";
+		};
+		9F3B28551BD8A813009139E6 /* 水情遥测 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B28561BD8A85C009139E6 /* WaterTelemetryController.h */,
+				9F3B28571BD8A85C009139E6 /* WaterTelemetryController.m */,
+			);
+			name = "水情遥测";
+			sourceTree = "<group>";
+		};
+		9F3B28591BD8B46A009139E6 /* 电站 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B28601BD8C3AA009139E6 /* itemCell */,
+				9F3B285A1BD8B490009139E6 /* PowerStationController.h */,
+				9F3B285B1BD8B490009139E6 /* PowerStationController.m */,
+				9F3B285D1BD8C1EC009139E6 /* RegularInspectionController.h */,
+				9F3B285E1BD8C1EC009139E6 /* RegularInspectionController.m */,
+				9F3B28661BD8CEB1009139E6 /* RegularTestController.h */,
+				9F3B28671BD8CEB1009139E6 /* RegularTestController.m */,
+				9F3B28691BD8D5AC009139E6 /* MachineCheckController.h */,
+				9F3B286A1BD8D5AC009139E6 /* MachineCheckController.m */,
+				9F3B286C1BD8DF78009139E6 /* RotatingEquipmentController.h */,
+				9F3B286D1BD8DF78009139E6 /* RotatingEquipmentController.m */,
+			);
+			name = "电站";
+			sourceTree = "<group>";
+		};
+		9F3B28601BD8C3AA009139E6 /* itemCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B28611BD8C3C3009139E6 /* RightLabelCell.xib */,
+				9F3B28631BD8C428009139E6 /* RightLabelCell.h */,
+				9F3B28641BD8C428009139E6 /* RightLabelCell.m */,
+			);
+			name = itemCell;
+			sourceTree = "<group>";
+		};
+		9F48EA471BD7284B001BE8B4 /* 峡口水库 */ = {
 			isa = PBXGroup;
 			children = (
 				9F2FDC161BCC8ACF00BC8673 /* customCell */,
@@ -292,7 +369,7 @@
 				9F48EA491BD72880001BE8B4 /* XiaKouController.m */,
 				9F48EA4C1BD72C22001BE8B4 /* Gate */,
 			);
-			name = "XiakouShuiku ";
+			name = "峡口水库";
 			sourceTree = "<group>";
 		};
 		9F48EA4B1BD72BF9001BE8B4 /* DamPartrol */ = {
@@ -309,6 +386,8 @@
 		9F48EA4C1BD72C22001BE8B4 /* Gate */ = {
 			isa = PBXGroup;
 			children = (
+				9F3B28551BD8A813009139E6 /* 水情遥测 */,
+				9F3B284E1BD8894A009139E6 /* 闸门 */,
 				9F48EA5D1BD785A2001BE8B4 /* 钢闸门 */,
 				9F48EA5C1BD78590001BE8B4 /* 锥形阀 */,
 				9F48EA561BD75099001BE8B4 /* NoteViewController.h */,
@@ -360,7 +439,9 @@
 		9F52F44D1BAA51080073F72E /* XiaKouStander */ = {
 			isa = PBXGroup;
 			children = (
-				9F48EA471BD7284B001BE8B4 /* XiakouShuiku  */,
+				9F3B28591BD8B46A009139E6 /* 电站 */,
+				9F38C1B81BCB9EFD00989036 /* 白水坑 */,
+				9F48EA471BD7284B001BE8B4 /* 峡口水库 */,
 				9F9B686B1BAA5AFD005B049E /* Until */,
 				9F38C1A91BCB985B00989036 /* Main */,
 				9F52F4521BAA51080073F72E /* AppDelegate.h */,
@@ -369,7 +450,6 @@
 				9F52F4561BAA51080073F72E /* ViewController.m */,
 				9F52F4581BAA51080073F72E /* Main.storyboard */,
 				9F52F45B1BAA51080073F72E /* Images.xcassets */,
-				9F38C1B81BCB9EFD00989036 /* BaiShuikeng */,
 				9F52F44E1BAA51080073F72E /* Supporting Files */,
 			);
 			path = XiaKouStander;
@@ -524,6 +604,7 @@
 				9F2FDC1D1BCC925500BC8673 /* next@2x.png in Resources */,
 				9F38C19F1BCB92B600989036 /* user@2x.png in Resources */,
 				9F38C1A51BCB92E400989036 /* password@3x.png in Resources */,
+				9F3B28621BD8C3C3009139E6 /* RightLabelCell.xib in Resources */,
 				9F2FDC261BCC9ACC00BC8673 /* CustomHeader.xib in Resources */,
 				9F38C1B11BCB9CE700989036 /* qixiang@2x.png in Resources */,
 				9F2FDC361BCCD0F100BC8673 /* ChildItemCell.xib in Resources */,
@@ -584,20 +665,29 @@
 				9F48EA4F1BD72C56001BE8B4 /* ValveViewController.m in Sources */,
 				9F52F4541BAA51080073F72E /* AppDelegate.m in Sources */,
 				9F2FDC241BCC997400BC8673 /* WeatherView.m in Sources */,
+				9F3B28541BD8A2E6009139E6 /* GateContentCheckController.m in Sources */,
 				9F52F4511BAA51080073F72E /* main.m in Sources */,
 				9F2FDC131BCC899F00BC8673 /* PartrolInfoCell.m in Sources */,
 				9F38C1AF1BCB994300989036 /* ItemCell.m in Sources */,
 				9F48EA581BD75099001BE8B4 /* NoteViewController.m in Sources */,
+				9F3B28511BD889B2009139E6 /* GateViewController.m in Sources */,
 				9F38C1A81BCB94DD00989036 /* MainViewController.m in Sources */,
+				9F3B286B1BD8D5AC009139E6 /* MachineCheckController.m in Sources */,
 				9F48EA5B1BD75D2D001BE8B4 /* ValveDetailController.m in Sources */,
 				9F38C19A1BCB900D00989036 /* CusNavViewController.m in Sources */,
+				9F3B285C1BD8B490009139E6 /* PowerStationController.m in Sources */,
+				9F3B286E1BD8DF78009139E6 /* RotatingEquipmentController.m in Sources */,
 				9F38C1BE1BCBAE8F00989036 /* DamPatrolViewController.m in Sources */,
+				9F3B28581BD8A85C009139E6 /* WaterTelemetryController.m in Sources */,
 				9F2FDC101BCC88CF00BC8673 /* SelectDateCell.m in Sources */,
 				9F48EA601BD78703001BE8B4 /* SteelGateController.m in Sources */,
 				9F38C1971BCB8FE100989036 /* RootViewController.m in Sources */,
 				9F38C1BB1BCB9F7000989036 /* ReseriorViewController.m in Sources */,
+				9F3B28651BD8C428009139E6 /* RightLabelCell.m in Sources */,
+				9F3B28681BD8CEB1009139E6 /* RegularTestController.m in Sources */,
 				9F2FDC2F1BCCCE3F00BC8673 /* MainItemCell.m in Sources */,
 				9F2FDC2C1BCCADA400BC8673 /* CheckViewController.m in Sources */,
+				9F3B285F1BD8C1EC009139E6 /* RegularInspectionController.m in Sources */,
 				9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */,
 				9F48EA4A1BD72880001BE8B4 /* XiaKouController.m in Sources */,
 				9F2FDC291BCC9BB200BC8673 /* CusHeaderView.m in Sources */,
