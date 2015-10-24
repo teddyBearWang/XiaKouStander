@@ -10,4 +10,6 @@
 
 @interface SteelGateController : RootViewController
 
+@property (nonatomic, strong) NSString *reserviorId;//水库id
+
 @end

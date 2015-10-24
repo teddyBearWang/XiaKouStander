@@ -40,6 +40,7 @@
     _currentDate = [self getCurrentDate:[NSDate date]];
     
     self.view.backgroundColor = [UIColor whiteColor];
+     NSLog(@"%@",self.reserviorId);
 }
 
 - (void)didReceiveMemoryWarning {

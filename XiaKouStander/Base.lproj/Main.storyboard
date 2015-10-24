@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1492" y="213"/>
+            <point key="canvasLocation" x="-2244" y="252"/>
         </scene>
         <!--峡口水库-->
         <scene sceneID="bY2-0U-Oim">
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEy-1T-78C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1152" y="171"/>
+            <point key="canvasLocation" x="-1886" y="252"/>
         </scene>
         <!--峡口水库-->
         <scene sceneID="tGm-F8-SaI">
@@ -247,11 +247,12 @@
                         <segue destination="GgU-vK-HaT" kind="push" identifier="steelGate" id="JgK-ZY-Ksk"/>
                         <segue destination="BL0-3K-UhS" kind="push" identifier="gate" id="0OT-uM-eTI"/>
                         <segue destination="eYQ-h6-quS" kind="push" identifier="waterTelemetry" id="vgg-Mx-j2P"/>
+                        <segue destination="7kR-3u-1Bp" kind="push" identifier="waterSource" id="EjF-SH-awP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWi-uj-cWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-700" y="-823"/>
+            <point key="canvasLocation" x="-952" y="-1797"/>
         </scene>
         <!--钢闸门外观形态检查-->
         <scene sceneID="ggh-Ul-7di">
@@ -309,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14h-Uv-KJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="-1104"/>
+            <point key="canvasLocation" x="-303" y="-1030"/>
         </scene>
         <!--闸门-->
         <scene sceneID="3m6-Vg-h8M">
@@ -428,6 +429,144 @@
             </objects>
             <point key="canvasLocation" x="-285" y="-2341"/>
         </scene>
+        <!--水源地保护情况检查记录-->
+        <scene sceneID="7mA-nS-CHp">
+            <objects>
+                <viewController id="7kR-3u-1Bp" customClass="WaterSourceController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VyR-EQ-bE2"/>
+                        <viewControllerLayoutGuide type="bottom" id="eMk-BR-f8I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CCT-hN-tYC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oz3-bT-QDo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="crs-6b-i5p"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-YO-42B">
+                                <rect key="frame" x="30" y="508" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.57647058819999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cI3-ae-UA1"/>
+                                    <constraint firstAttribute="width" constant="260" id="zUM-Z1-oqR"/>
+                                </constraints>
+                                <state key="normal" title="确认上传">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveUploadAction:" destination="7kR-3u-1Bp" eventType="touchUpInside" id="5Jp-n6-qe2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="bGd-YO-42B" secondAttribute="centerX" id="Cir-zh-xzO"/>
+                            <constraint firstItem="bGd-YO-42B" firstAttribute="top" secondItem="oz3-bT-QDo" secondAttribute="bottom" constant="28" id="K3M-vo-Nlm"/>
+                            <constraint firstAttribute="centerX" secondItem="oz3-bT-QDo" secondAttribute="centerX" id="Yuz-PH-EVM"/>
+                            <constraint firstItem="oz3-bT-QDo" firstAttribute="leading" secondItem="CCT-hN-tYC" secondAttribute="leadingMargin" constant="-16" id="cMa-28-jNA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oz3-bT-QDo" secondAttribute="trailing" constant="-16" id="d5q-U9-bIF"/>
+                            <constraint firstItem="oz3-bT-QDo" firstAttribute="top" secondItem="VyR-EQ-bE2" secondAttribute="bottom" constant="-64" id="nY5-wB-RI5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="水源地保护情况检查记录" id="QG5-kU-6IE">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="W0x-Io-fxt"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveBtn" destination="bGd-YO-42B" id="gpf-jb-4yK"/>
+                        <outlet property="waterTable" destination="oz3-bT-QDo" id="hXM-sF-Idd"/>
+                        <segue destination="MIg-Jw-67l" kind="push" identifier="addWaterSourceNote" id="ujO-eS-vbU"/>
+                        <segue destination="VWr-yy-Y5q" kind="push" identifier="waterContent" id="vQH-2k-7S1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ec1-ex-UaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285" y="-3010"/>
+        </scene>
+        <!--检查内容-->
+        <scene sceneID="pJ5-BY-Mhw">
+            <objects>
+                <viewController id="VWr-yy-Y5q" customClass="WaterContentController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Enn-p2-ahP"/>
+                        <viewControllerLayoutGuide type="bottom" id="f3N-18-60N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pWY-Sl-pgc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GQa-AU-uAs">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="cSO-bF-iGO"/>
+                                </constraints>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否正常" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-VX-9Sc">
+                                <rect key="frame" x="163" y="90" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Jzw-So-N7t"/>
+                                    <constraint firstAttribute="width" constant="80" id="nEP-2Z-UFi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70w-ra-zS0">
+                                <rect key="frame" x="261" y="90" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----------------------" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDR-vi-0h4">
+                                <rect key="frame" x="156" y="129" width="154" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Wmq-S7-GX4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcX-Qp-MKG">
+                                <rect key="frame" x="138" y="0.0" width="2" height="568"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.57647058819999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="o23-XT-xV5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f3N-18-60N" firstAttribute="top" secondItem="EcX-Qp-MKG" secondAttribute="bottom" id="G1r-20-yEp"/>
+                            <constraint firstItem="EcX-Qp-MKG" firstAttribute="leading" secondItem="GQa-AU-uAs" secondAttribute="trailing" constant="-2" id="KGT-kA-byq"/>
+                            <constraint firstItem="EcX-Qp-MKG" firstAttribute="top" secondItem="Enn-p2-ahP" secondAttribute="bottom" constant="-64" id="NUf-j9-QqA"/>
+                            <constraint firstItem="SDR-vi-0h4" firstAttribute="leading" secondItem="EcX-Qp-MKG" secondAttribute="trailing" constant="16" id="Raa-v8-POk"/>
+                            <constraint firstItem="70w-ra-zS0" firstAttribute="leading" secondItem="vdk-VX-9Sc" secondAttribute="trailing" constant="18" id="Yjf-ZW-r2x"/>
+                            <constraint firstItem="GQa-AU-uAs" firstAttribute="top" secondItem="Enn-p2-ahP" secondAttribute="bottom" constant="-64" id="cj8-2z-w8m"/>
+                            <constraint firstItem="SDR-vi-0h4" firstAttribute="top" secondItem="vdk-VX-9Sc" secondAttribute="bottom" constant="9" id="dNd-vR-kCK"/>
+                            <constraint firstItem="70w-ra-zS0" firstAttribute="top" secondItem="Enn-p2-ahP" secondAttribute="bottom" constant="26" id="e1h-bd-A5R"/>
+                            <constraint firstItem="GQa-AU-uAs" firstAttribute="leading" secondItem="pWY-Sl-pgc" secondAttribute="leadingMargin" constant="-16" id="fPh-UG-jsZ"/>
+                            <constraint firstItem="f3N-18-60N" firstAttribute="top" secondItem="GQa-AU-uAs" secondAttribute="bottom" id="hHK-Hr-3kr"/>
+                            <constraint firstItem="vdk-VX-9Sc" firstAttribute="leading" secondItem="GQa-AU-uAs" secondAttribute="trailing" constant="23" id="iqV-PG-6IG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SDR-vi-0h4" secondAttribute="trailing" constant="-6" id="rKC-U9-M0W"/>
+                            <constraint firstItem="vdk-VX-9Sc" firstAttribute="top" secondItem="Enn-p2-ahP" secondAttribute="bottom" constant="26" id="y3c-df-ZNQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="检查内容" id="BUK-MN-isF"/>
+                    <connections>
+                        <outlet property="dividerLabel" destination="SDR-vi-0h4" id="u9v-k5-adf"/>
+                        <outlet property="dividerView" destination="EcX-Qp-MKG" id="ZgK-99-R9Q"/>
+                        <outlet property="mainTable" destination="GQa-AU-uAs" id="cBb-qs-SAY"/>
+                        <outlet property="stationNameLabel" destination="vdk-VX-9Sc" id="9gm-Sp-uJW"/>
+                        <outlet property="tapSwitch" destination="70w-ra-zS0" id="EeT-VV-yQx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2A-WK-auD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="-2968"/>
+        </scene>
         <!--检查内容-->
         <scene sceneID="DSv-gq-t5n">
             <objects>
@@ -506,7 +645,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99N-xf-ceZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="-1721"/>
+            <point key="canvasLocation" x="124" y="-1721"/>
+        </scene>
+        <!--柴油发电机-->
+        <scene sceneID="YGm-Qf-nfB">
+            <objects>
+                <viewController id="HoL-XQ-Tbn" customClass="DieselGeneratorController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DDP-Bf-99c"/>
+                        <viewControllerLayoutGuide type="bottom" id="gH4-KY-AVd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2ll-cI-Wof">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="k3k-cc-7QG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="KgC-21-bZj"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7d-bA-xOa">
+                                <rect key="frame" x="30" y="502" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.57647058819999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="D6h-So-oYZ"/>
+                                    <constraint firstAttribute="width" constant="260" id="v2f-8B-KNE"/>
+                                </constraints>
+                                <state key="normal" title="确认上传">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveUploadAction:" destination="HoL-XQ-Tbn" eventType="touchUpInside" id="LNu-40-2Jx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k3k-cc-7QG" firstAttribute="top" secondItem="DDP-Bf-99c" secondAttribute="bottom" constant="-64" id="EOq-xj-LPI"/>
+                            <constraint firstItem="k3k-cc-7QG" firstAttribute="leading" secondItem="2ll-cI-Wof" secondAttribute="leadingMargin" constant="-16" id="L76-jk-5Fm"/>
+                            <constraint firstItem="y7d-bA-xOa" firstAttribute="top" secondItem="k3k-cc-7QG" secondAttribute="bottom" constant="22" id="XDj-WH-dQD"/>
+                            <constraint firstAttribute="centerX" secondItem="y7d-bA-xOa" secondAttribute="centerX" id="eN9-3W-o5d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k3k-cc-7QG" secondAttribute="trailing" constant="-16" id="nIf-RW-YpW"/>
+                            <constraint firstAttribute="centerX" secondItem="k3k-cc-7QG" secondAttribute="centerX" id="waM-bk-vaN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="柴油发电机" id="c0t-Mf-1Ds"/>
+                    <connections>
+                        <outlet property="dieselTable" destination="k3k-cc-7QG" id="OC3-Vg-Suj"/>
+                        <outlet property="uploadBtn" destination="y7d-bA-xOa" id="Hy6-Ud-TsT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lm5-OU-fo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2284" y="-1573"/>
         </scene>
         <!--白水坑水库-->
         <scene sceneID="bBY-J8-h9z">
@@ -554,11 +748,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="4UY-OA-1Xs" id="p7h-hs-Hcs"/>
+                        <segue destination="7kR-3u-1Bp" kind="push" identifier="baiWaterSource" id="gIe-02-Kyk"/>
+                        <segue destination="HoL-XQ-Tbn" kind="push" identifier="baiDisesel" id="5hX-Ee-GPd"/>
+                        <segue destination="GgU-vK-HaT" kind="push" identifier="baiSteelGate" id="YwU-Re-Fc4"/>
+                        <segue destination="BL0-3K-UhS" kind="push" identifier="baiGate" id="wpA-Ir-7n8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNa-Ds-e97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-700" y="213"/>
+            <point key="canvasLocation" x="-1729" y="-1472"/>
         </scene>
         <!--电站-->
         <scene sceneID="UFy-qs-55g">
@@ -594,11 +792,12 @@
                         <segue destination="b24-nq-NEY" kind="push" identifier="regularTest" id="Dtj-qQ-JNf"/>
                         <segue destination="tLx-XH-ntH" kind="push" identifier="machineCheck" id="DsJ-uH-cGI"/>
                         <segue destination="p4x-HJ-aFL" kind="push" identifier="rotationEquaipment" id="Urd-LY-bHj"/>
+                        <segue destination="01P-du-ari" kind="push" identifier="emergencyEquipment" id="Z2q-aM-o4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgU-Pb-Hhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-766" y="2039"/>
+            <point key="canvasLocation" x="-1914" y="2715"/>
         </scene>
         <!--设备检修和试验登记表-->
         <scene sceneID="Td7-Jk-5GY">
@@ -657,7 +856,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8L-1t-4E4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="1997"/>
+            <point key="canvasLocation" x="-245" y="2855"/>
         </scene>
         <!--设备轮换检查记录-->
         <scene sceneID="ZM0-s5-Dbd">
@@ -716,7 +915,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hr-OB-Jxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="2613"/>
+            <point key="canvasLocation" x="-245" y="3497"/>
+        </scene>
+        <!--应急设备定期检查试验记录-->
+        <scene sceneID="WiG-ZA-n60">
+            <objects>
+                <viewController id="01P-du-ari" customClass="EmergencyEquipmentController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lzx-9E-TPy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xbg-2b-Q1f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0m0-R0-phl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5YF-MJ-Vau">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="490"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="490" id="GFB-4z-J2e"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ey-0u-nXQ">
+                                <rect key="frame" x="30" y="508" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.57647058819999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="55l-Dx-kqH"/>
+                                    <constraint firstAttribute="width" constant="260" id="uKX-0X-tqD"/>
+                                </constraints>
+                                <state key="normal" title="确认上传">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveUploadAction:" destination="01P-du-ari" eventType="touchUpInside" id="0uu-k9-OGR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="5YF-MJ-Vau" secondAttribute="centerX" id="9SP-Ag-SOF"/>
+                            <constraint firstItem="5YF-MJ-Vau" firstAttribute="leading" secondItem="0m0-R0-phl" secondAttribute="leadingMargin" constant="-16" id="BNn-TV-yFl"/>
+                            <constraint firstItem="2ey-0u-nXQ" firstAttribute="top" secondItem="5YF-MJ-Vau" secondAttribute="bottom" constant="18" id="IEk-tX-DVg"/>
+                            <constraint firstItem="5YF-MJ-Vau" firstAttribute="top" secondItem="lzx-9E-TPy" secondAttribute="bottom" constant="-64" id="UQI-vD-Xox"/>
+                            <constraint firstAttribute="centerX" secondItem="2ey-0u-nXQ" secondAttribute="centerX" id="fzl-jF-DSv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5YF-MJ-Vau" secondAttribute="trailing" constant="-16" id="pLe-Fz-hWy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="应急设备定期检查试验记录" id="gfd-HH-afG"/>
+                    <connections>
+                        <outlet property="detailTable" destination="5YF-MJ-Vau" id="lEG-Ce-NNg"/>
+                        <outlet property="saveBtn" destination="2ey-0u-nXQ" id="J5I-Z8-Mhx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPx-uJ-Pd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-237" y="4309"/>
         </scene>
         <!--安全工器具定期试验记录表-->
         <scene sceneID="1aH-qm-jSf">
@@ -774,7 +1028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xid-Ro-E9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="1380"/>
+            <point key="canvasLocation" x="-245" y="2232"/>
         </scene>
         <!--安全工器定期检查记录-->
         <scene sceneID="Lnq-Kt-yTk">
@@ -829,7 +1083,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beQ-D0-KIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="754"/>
+            <point key="canvasLocation" x="-245" y="1612"/>
         </scene>
         <!--大坝巡视检查记录表-->
         <scene sceneID="Yez-XL-TNc">
@@ -888,7 +1142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCO-ye-sLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-279" y="129"/>
+            <point key="canvasLocation" x="-279" y="715"/>
         </scene>
         <!--锥形阀-->
         <scene sceneID="TGt-45-PDr">
@@ -1045,7 +1299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7C-LM-1Uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365" y="-969"/>
+            <point key="canvasLocation" x="283" y="-1099"/>
         </scene>
         <!--备注-->
         <scene sceneID="LJ5-Wg-xlv">
@@ -1107,7 +1361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DY-O1-nQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="-964"/>
+            <point key="canvasLocation" x="905" y="-1048"/>
         </scene>
         <!--检查内容-->
         <scene sceneID="OHy-6H-jzn">
@@ -1169,7 +1423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TL-kr-e5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="293" y="129"/>
+            <point key="canvasLocation" x="103" y="61"/>
         </scene>
         <!--Cus Nav View Controller-->
         <scene sceneID="6aC-YL-zfA">
@@ -1185,7 +1439,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwy-yY-vyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1849" y="208"/>
+            <point key="canvasLocation" x="-2611" y="252"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1194,7 +1448,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JH9-jB-C03"/>
-        <segue reference="Nxc-GI-g2Z"/>
+        <segue reference="wpA-Ir-7n8"/>
+        <segue reference="YwU-Re-Fc4"/>
+        <segue reference="gIe-02-Kyk"/>
+        <segue reference="vjl-fm-VW4"/>
+        <segue reference="ujO-eS-vbU"/>
     </inferredMetricsTieBreakers>
 </document>

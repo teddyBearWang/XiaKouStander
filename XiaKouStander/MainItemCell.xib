@@ -17,27 +17,38 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5d0-vT-cmc">
                         <rect key="frame" x="4" y="3" width="96" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上游面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOp-EY-Xof">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上游面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOp-EY-Xof">
                                 <rect key="frame" x="8" y="6" width="88" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-na-Ze1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-na-Ze1">
                                 <rect key="frame" x="3" y="7" width="3" height="30"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Usw-qG-wWG"/>
+                                    <constraint firstAttribute="width" constant="3" id="aYb-I8-EZr"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1003104204" green="1" blue="0.96923083539999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YOp-EY-Xof" secondAttribute="trailing" id="2bv-fE-6Gf"/>
+                            <constraint firstAttribute="bottom" secondItem="YOp-EY-Xof" secondAttribute="bottom" constant="8" id="Pjk-Qo-wbn"/>
                             <constraint firstAttribute="height" constant="44" id="ZwZ-pV-wWC"/>
+                            <constraint firstItem="7jQ-na-Ze1" firstAttribute="leading" secondItem="5d0-vT-cmc" secondAttribute="leading" constant="3" id="aON-Xd-r7O"/>
                             <constraint firstAttribute="width" constant="96" id="fVZ-A2-9hv"/>
+                            <constraint firstAttribute="centerY" secondItem="7jQ-na-Ze1" secondAttribute="centerY" id="fx9-m7-27S"/>
+                            <constraint firstItem="YOp-EY-Xof" firstAttribute="leading" secondItem="7jQ-na-Ze1" secondAttribute="trailing" constant="2" id="oZe-8W-3vk"/>
+                            <constraint firstItem="YOp-EY-Xof" firstAttribute="top" secondItem="5d0-vT-cmc" secondAttribute="top" constant="6" id="rwJ-AD-UC1"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="5d0-vT-cmc" secondAttribute="bottom" constant="2" id="2c4-mS-LKx"/>
                     <constraint firstItem="5d0-vT-cmc" firstAttribute="top" secondItem="yfa-eW-jFO" secondAttribute="top" constant="3" id="5kX-Eb-oe5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5d0-vT-cmc" secondAttribute="trailing" constant="-8" id="B42-s9-Kmp"/>
                     <constraint firstItem="5d0-vT-cmc" firstAttribute="leading" secondItem="yfa-eW-jFO" secondAttribute="leadingMargin" constant="-4" id="fUH-yD-KDe"/>
                 </constraints>
             </tableViewCellContentView>

@@ -90,7 +90,7 @@
             break;
         case 4:
         {
-            
+            [self performSegueWithIdentifier:@"emergencyEquipment" sender:nil];
         }
             break;
         default:

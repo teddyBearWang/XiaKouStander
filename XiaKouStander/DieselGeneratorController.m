@@ -1,49 +1,50 @@
 //
-//  SteelGateController.m
+//  DieselGeneratorController.m
 //  XiaKouStander
-//  **********钢闸门*********
-//  Created by teddy on 15/10/21.
+//  ********柴油发电机*************
+//  Created by teddy on 15/10/24.
 //  Copyright (c) 2015年 teddy. All rights reserved.
 //
 
-#import "SteelGateController.h"
-#import "SelectDateCell.h"
+#import "DieselGeneratorController.h"
+#import "RightLabelCell.h"
+#import "PartrolInfoCell.h"
 #import "WeatherView.h"
 #import "CusHeaderView.h"
-#import "ChildItemCell.h"
-#import "PartrolInfoCell.h"
+#import "SelectDateCell.h"
 
-@interface SteelGateController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface DieselGeneratorController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
-    NSString *_currentDate;//选择时间
-    NSArray *_infoList;//巡查信息记录
+    NSArray *_list;//数据源
+    NSString *_currentDate; //当前填表的日期
 }
-
-//上传按钮
+@property (weak, nonatomic) IBOutlet UITableView *dieselTable;
 @property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
-//列表
-@property (weak, nonatomic) IBOutlet UITableView *gateTable;
-
-//上传事件
-- (IBAction)uploadAction:(id)sender;
+- (IBAction)saveUploadAction:(id)sender;
 
 @end
 
-@implementation SteelGateController
+@implementation DieselGeneratorController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.dieselTable.delegate = self;
+    self.dieselTable.dataSource = self;
+    self.dieselTable.backgroundColor = CELL_BG_COLOR;
     
-    self.gateTable.dataSource = self;
-    self.gateTable.delegate = self;
-    self.gateTable.backgroundColor = CELL_BG_COLOR;
-    _infoList = @[@"是否需要审批",@"检查人员",@"复核人员",@"负责人"];
-    
+    _list = @[@"燃油",@"冷却水",@"电瓶",@"机油",@"机温",@"转速",@"油压",@"频率表",@"发动机",@"控制开关",@"运行时间",@"运行情况",@"送电情况",@"检测人员",@"校核人员"];
     //默认为当天的日期
     _currentDate = [self getCurrentDate:[NSDate date]];
     
-     NSLog(@"%@",self.reserviorId);
+    
+    //键盘即将出现
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:nil];
+    
+    //键盘即将消失
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillShowNotification object:nil];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,20 +58,39 @@
     
 #ifdef __IPHONE_8_0
     if ([[[UIDevice currentDevice] systemVersion] floatValue] > 8.0) {
-        if ([self.gateTable respondsToSelector:@selector(setLayoutMargins:)]) {
-            [self.gateTable setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
+        if ([self.dieselTable respondsToSelector:@selector(setLayoutMargins:)]) {
+            [self.dieselTable setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
         }
     }
 #endif
-    if ([self.gateTable respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self.gateTable setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    if ([self.dieselTable respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.dieselTable setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     }
 }
 
+#pragma mark - NSNotification
+//键盘即将出现
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.view.center = CGPointMake(self.view.center.x, self.view.center.y+150);
+    [UIView commitAnimations];
+}
+
+//键盘即将消失
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.view.center = CGPointMake(self.view.center.x, self.view.center.y-150);
+    [UIView commitAnimations];
+    
+}
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -83,12 +103,7 @@
             break;
         case 1:
         {
-            return 2;
-        }
-            break;
-        case 2:
-        {
-            return 4;
+            return _list.count;
         }
             break;
         default:
@@ -111,13 +126,16 @@
             dateCell.selectionStyle = UITableViewCellSelectionStyleNone;
             dateCell.dateLabel.text = _currentDate;
             [dateCell.forwardBtn addTarget:self action:@selector(forwardDateAction:) forControlEvents:UIControlEventTouchUpInside];
+            dateCell.forwardBtn.tag = 101;
             [dateCell.nextBtn addTarget:self action:@selector(nextDateAction:) forControlEvents:UIControlEventTouchUpInside];
+            dateCell.nextBtn.tag = 102;
             return dateCell;
         }
             break;
         case 1:
         {
-            if (indexPath.row == 0) {
+            if (indexPath.row != _list.count - 1) {
+                
                 //闸门名称
                 PartrolInfoCell *partrolCell = (PartrolInfoCell *)[[[NSBundle mainBundle] loadNibNamed:@"PartrolInfoCell" owner:nil options:nil] lastObject];
                 partrolCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -125,41 +143,20 @@
                 partrolCell.valueField.returnKeyType = UIReturnKeyDone;
                 partrolCell.valueField.backgroundColor = CELL_BG_COLOR;
                 partrolCell.valueField.delegate = self;
+                
                 partrolCell.postionLabel.font = [UIFont systemFontOfSize:15];
-                partrolCell.postionLabel.text = @" 闸门名称";
-                partrolCell.valueField.placeholder = @"请输入闸门名称";
+                partrolCell.postionLabel.text = _list[indexPath.row];
+                partrolCell.valueField.placeholder = [NSString stringWithFormat:@"请输入%@",_list[indexPath.row]];
                 return partrolCell;
             }else{
-                UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-                cell.textLabel.text = @"  设备巡查";
-                cell.backgroundColor = CELL_BG_COLOR;
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                cell.textLabel.font = [UIFont systemFontOfSize:15];
-                return cell;
+                RightLabelCell *rightCell = (RightLabelCell *)[[[NSBundle mainBundle] loadNibNamed:@"RightLabelCell" owner:nil options:nil] lastObject];
+                rightCell.nameLabel.text = _list[indexPath.row];
+                rightCell.rightLabel.text = @"系统管理员";
+                rightCell.backgroundColor = CELL_BG_COLOR;
+                rightCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                return rightCell;
             }
-        }
-            break;
-        case 2:
-        {
-            if (indexPath.row != 0) {
-                UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-                cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-                cell.textLabel.font = [UIFont systemFontOfSize:15];
-               // if (indexPath.row == 2) {
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-               // }
-                cell.textLabel.text = [NSString stringWithFormat:@"  %@",_infoList[indexPath.row]];
-                cell.backgroundColor = CELL_BG_COLOR;
-                return cell;
-            }else{
-                //子列表
-                ChildItemCell *cell = (ChildItemCell *)[[[NSBundle mainBundle] loadNibNamed:@"ChildItemCell" owner:nil options:nil] lastObject];
-                cell.backgroundColor = CELL_BG_COLOR;
-                cell.valueLabel.text = [NSString stringWithFormat:@"  %@",_infoList[indexPath.row]];
-                cell.tapSelect.on = NO;//默认关闭
-                cell.tapSelect.tag = indexPath.row;
-                return cell;
-            }
+            
         }
             break;
         default:
@@ -191,21 +188,7 @@
         case 1:
         {
             CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"巡查内容";
-            return header;
-        }
-            break;
-        case 2:
-        {
-            CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"处理结果上报";
-            return header;
-        }
-            break;
-        case 3:
-        {
-            CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"巡查信息记录";
+            header.titleLabel.text = @"检查内容";
             return header;
         }
             break;
@@ -215,28 +198,13 @@
     }
 }
 
-static int _selectRow; //选择第几行
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
-        if (indexPath.row == 1) {
-            [self performSegueWithIdentifier:@"steelCheck" sender:nil];
-            _selectRow = (int)indexPath.row;
-        }
-
-    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-//利用storyBoard进行传值
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"addResult"]) {
-//        id theSegue = segue.destinationViewController;
-//        //到时候可以直接传递数据源到下一级
-//        [theSegue setValue:@"新增处理结果" forKey:@"titleName"];
-//    }
-//}
+
 
 #pragma mark - SelectDateAction
 //根据时间得到时间字符串
@@ -258,31 +226,41 @@ static int _selectRow; //选择第几行
 }
 
 //前一天
-- (void)forwardDateAction:(id)sender
+- (void)forwardDateAction:(UIButton *)sender
 {
+    
     NSDate *date = [self stringToDate:_currentDate];
     NSDate *forwardDate = [date dateByAddingTimeInterval:-60*60*24];
     _currentDate = [self getCurrentDate:forwardDate];
-    [self.gateTable reloadData];
+    [self.dieselTable reloadData];
 }
 
 //后一天
-- (void)nextDateAction:(id)sender
+- (void)nextDateAction:(UIButton *)sender
 {
     NSDate *date = [self stringToDate:_currentDate];
     NSDate *forwardDate = [date dateByAddingTimeInterval:60*60*24];
+    //  _currentDate = [self getCurrentDate:forwardDate];
     _currentDate = [self getCurrentDate:forwardDate];
-    [self.gateTable reloadData];
+   
+    [self.dieselTable reloadData];
 }
 
-#pragma mark - UITextFieldDelegate
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"addTestNote"]) {
+//        id theSegue = segue.destinationViewController;
+//        [theSegue setValue:@"备注" forKey:@"titleName"];
+//    }
+//}
 
+#pragma mark - UItextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
-- (IBAction)uploadAction:(id)sender {
+- (IBAction)saveUploadAction:(id)sender {
 }
 @end

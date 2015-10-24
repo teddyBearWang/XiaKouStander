@@ -24,6 +24,10 @@
 		9F2FDC311BCCCE6000BC8673 /* MainItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC301BCCCE6000BC8673 /* MainItemCell.xib */; };
 		9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FDC331BCCD0BC00BC8673 /* ChildItemCell.m */; };
 		9F2FDC361BCCD0F100BC8673 /* ChildItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FDC351BCCD0F100BC8673 /* ChildItemCell.xib */; };
+		9F3253A81BDB1B8F007AEF7D /* WaterSourceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3253A71BDB1B8F007AEF7D /* WaterSourceController.m */; };
+		9F3253AB1BDB29BB007AEF7D /* WaterContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3253AA1BDB29BB007AEF7D /* WaterContentController.m */; };
+		9F3253AE1BDB4F28007AEF7D /* EmergencyEquipmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3253AD1BDB4F28007AEF7D /* EmergencyEquipmentController.m */; };
+		9F3253B21BDB6E6B007AEF7D /* DieselGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3253B11BDB6E6B007AEF7D /* DieselGeneratorController.m */; };
 		9F38C1971BCB8FE100989036 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1961BCB8FE100989036 /* RootViewController.m */; };
 		9F38C19A1BCB900D00989036 /* CusNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1991BCB900D00989036 /* CusNavViewController.m */; };
 		9F38C19F1BCB92B600989036 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F38C19E1BCB92B600989036 /* user@2x.png */; };
@@ -103,6 +107,14 @@
 		9F2FDC321BCCD0BC00BC8673 /* ChildItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildItemCell.h; sourceTree = "<group>"; };
 		9F2FDC331BCCD0BC00BC8673 /* ChildItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemCell.m; sourceTree = "<group>"; };
 		9F2FDC351BCCD0F100BC8673 /* ChildItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildItemCell.xib; sourceTree = "<group>"; };
+		9F3253A61BDB1B8F007AEF7D /* WaterSourceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterSourceController.h; sourceTree = "<group>"; };
+		9F3253A71BDB1B8F007AEF7D /* WaterSourceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterSourceController.m; sourceTree = "<group>"; };
+		9F3253A91BDB29BB007AEF7D /* WaterContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterContentController.h; sourceTree = "<group>"; };
+		9F3253AA1BDB29BB007AEF7D /* WaterContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterContentController.m; sourceTree = "<group>"; };
+		9F3253AC1BDB4F28007AEF7D /* EmergencyEquipmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyEquipmentController.h; sourceTree = "<group>"; };
+		9F3253AD1BDB4F28007AEF7D /* EmergencyEquipmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyEquipmentController.m; sourceTree = "<group>"; };
+		9F3253B01BDB6E6B007AEF7D /* DieselGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DieselGeneratorController.h; sourceTree = "<group>"; };
+		9F3253B11BDB6E6B007AEF7D /* DieselGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DieselGeneratorController.m; sourceTree = "<group>"; };
 		9F38C1931BCB8EA500989036 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9F38C1951BCB8FE100989036 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9F38C1961BCB8FE100989036 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -243,6 +255,26 @@
 			name = customView;
 			sourceTree = "<group>";
 		};
+		9F3253A51BDB1B4D007AEF7D /* 库区巡查 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3253A61BDB1B8F007AEF7D /* WaterSourceController.h */,
+				9F3253A71BDB1B8F007AEF7D /* WaterSourceController.m */,
+				9F3253A91BDB29BB007AEF7D /* WaterContentController.h */,
+				9F3253AA1BDB29BB007AEF7D /* WaterContentController.m */,
+			);
+			name = "库区巡查";
+			sourceTree = "<group>";
+		};
+		9F3253AF1BDB6D86007AEF7D /* 柴油发电机 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3253B01BDB6E6B007AEF7D /* DieselGeneratorController.h */,
+				9F3253B11BDB6E6B007AEF7D /* DieselGeneratorController.m */,
+			);
+			name = "柴油发电机";
+			sourceTree = "<group>";
+		};
 		9F38C1941BCB8FA900989036 /* CustomCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +337,7 @@
 		9F38C1B81BCB9EFD00989036 /* 白水坑 */ = {
 			isa = PBXGroup;
 			children = (
+				9F3253AF1BDB6D86007AEF7D /* 柴油发电机 */,
 				9F38C1B91BCB9F7000989036 /* ReseriorViewController.h */,
 				9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */,
 			);
@@ -345,6 +378,8 @@
 				9F3B286A1BD8D5AC009139E6 /* MachineCheckController.m */,
 				9F3B286C1BD8DF78009139E6 /* RotatingEquipmentController.h */,
 				9F3B286D1BD8DF78009139E6 /* RotatingEquipmentController.m */,
+				9F3253AC1BDB4F28007AEF7D /* EmergencyEquipmentController.h */,
+				9F3253AD1BDB4F28007AEF7D /* EmergencyEquipmentController.m */,
 			);
 			name = "电站";
 			sourceTree = "<group>";
@@ -386,6 +421,7 @@
 		9F48EA4C1BD72C22001BE8B4 /* Gate */ = {
 			isa = PBXGroup;
 			children = (
+				9F3253A51BDB1B4D007AEF7D /* 库区巡查 */,
 				9F3B28551BD8A813009139E6 /* 水情遥测 */,
 				9F3B284E1BD8894A009139E6 /* 闸门 */,
 				9F48EA5D1BD785A2001BE8B4 /* 钢闸门 */,
@@ -668,8 +704,11 @@
 				9F3B28541BD8A2E6009139E6 /* GateContentCheckController.m in Sources */,
 				9F52F4511BAA51080073F72E /* main.m in Sources */,
 				9F2FDC131BCC899F00BC8673 /* PartrolInfoCell.m in Sources */,
+				9F3253AE1BDB4F28007AEF7D /* EmergencyEquipmentController.m in Sources */,
 				9F38C1AF1BCB994300989036 /* ItemCell.m in Sources */,
 				9F48EA581BD75099001BE8B4 /* NoteViewController.m in Sources */,
+				9F3253B21BDB6E6B007AEF7D /* DieselGeneratorController.m in Sources */,
+				9F3253A81BDB1B8F007AEF7D /* WaterSourceController.m in Sources */,
 				9F3B28511BD889B2009139E6 /* GateViewController.m in Sources */,
 				9F38C1A81BCB94DD00989036 /* MainViewController.m in Sources */,
 				9F3B286B1BD8D5AC009139E6 /* MachineCheckController.m in Sources */,
@@ -686,6 +725,7 @@
 				9F3B28651BD8C428009139E6 /* RightLabelCell.m in Sources */,
 				9F3B28681BD8CEB1009139E6 /* RegularTestController.m in Sources */,
 				9F2FDC2F1BCCCE3F00BC8673 /* MainItemCell.m in Sources */,
+				9F3253AB1BDB29BB007AEF7D /* WaterContentController.m in Sources */,
 				9F2FDC2C1BCCADA400BC8673 /* CheckViewController.m in Sources */,
 				9F3B285F1BD8C1EC009139E6 /* RegularInspectionController.m in Sources */,
 				9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */,
@@ -810,6 +850,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: roger ace (W6A2225E87)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: roger ace (W6A2225E87)";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XiaKouStander/PrefixHeader.pch";
@@ -826,6 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: roger ace (W6A2225E87)";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XiaKouStander/PrefixHeader.pch";

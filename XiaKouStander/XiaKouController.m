@@ -75,7 +75,8 @@
     switch (indexPath.row) {
         case 0:
         {
-            //[self performSegueWithIdentifier:@"damPartrol" sender:nil];
+            //库区巡查
+            [self performSegueWithIdentifier:@"waterSource" sender:nil];
         }
             break;
         case 1:
@@ -110,6 +111,26 @@
             break;
         default:
             break;
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"waterSource"]) {
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:@"峡口水库" forKey:@"reserviorId"];
+    }
+    else if ([segue.identifier isEqualToString:@"steelGate"])
+    {
+        //钢闸门
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:@"峡口水库" forKey:@"reserviorId"];
+    }
+    else if ([segue.identifier isEqualToString:@"gate"])
+    {
+        //闸门
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:@"峡口水库" forKey:@"reserviorId"];
     }
 }
 
