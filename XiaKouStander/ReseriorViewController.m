@@ -78,14 +78,17 @@
             //柴油发电机
             [self performSegueWithIdentifier:@"baiDisesel" sender:nil];
         }
+            break;
         case 2:
         {
-            //大坝
+            //大坝巡查
+            [self performSegueWithIdentifier:@"baiDamCheck" sender:nil];
         }
             break;
         case 3:
         {
             //防空洞
+            [self performSegueWithIdentifier:@"raidShelter" sender:nil];
         }
             break;
         case 4:

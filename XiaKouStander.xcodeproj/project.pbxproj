@@ -43,6 +43,10 @@
 		9F38C1B71BCB9D0800989036 /* rain@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F38C1B61BCB9D0800989036 /* rain@3x.png */; };
 		9F38C1BB1BCB9F7000989036 /* ReseriorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */; };
 		9F38C1BE1BCBAE8F00989036 /* DamPatrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C1BD1BCBAE8F00989036 /* DamPatrolViewController.m */; };
+		9F3A84561BDDC2AC0075C725 /* AirRaidShelterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A84551BDDC2AC0075C725 /* AirRaidShelterController.m */; };
+		9F3A845E1BDE092B0075C725 /* ShelterContentCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A845D1BDE092B0075C725 /* ShelterContentCheckController.m */; };
+		9F3A84651BDE0A9B0075C725 /* UILabel+CustomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A84641BDE0A9B0075C725 /* UILabel+CustomLevel.m */; };
+		9F3A849E1BDE222E0075C725 /* BaiDamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A849D1BDE222E0075C725 /* BaiDamViewController.m */; };
 		9F3B28511BD889B2009139E6 /* GateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28501BD889B2009139E6 /* GateViewController.m */; };
 		9F3B28541BD8A2E6009139E6 /* GateContentCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28531BD8A2E6009139E6 /* GateContentCheckController.m */; };
 		9F3B28581BD8A85C009139E6 /* WaterTelemetryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28571BD8A85C009139E6 /* WaterTelemetryController.m */; };
@@ -137,6 +141,14 @@
 		9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReseriorViewController.m; sourceTree = "<group>"; };
 		9F38C1BC1BCBAE8F00989036 /* DamPatrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DamPatrolViewController.h; sourceTree = "<group>"; };
 		9F38C1BD1BCBAE8F00989036 /* DamPatrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DamPatrolViewController.m; sourceTree = "<group>"; };
+		9F3A84541BDDC2AC0075C725 /* AirRaidShelterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirRaidShelterController.h; sourceTree = "<group>"; };
+		9F3A84551BDDC2AC0075C725 /* AirRaidShelterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirRaidShelterController.m; sourceTree = "<group>"; };
+		9F3A845C1BDE092B0075C725 /* ShelterContentCheckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShelterContentCheckController.h; sourceTree = "<group>"; };
+		9F3A845D1BDE092B0075C725 /* ShelterContentCheckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShelterContentCheckController.m; sourceTree = "<group>"; };
+		9F3A84631BDE0A9B0075C725 /* UILabel+CustomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CustomLevel.h"; sourceTree = "<group>"; };
+		9F3A84641BDE0A9B0075C725 /* UILabel+CustomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CustomLevel.m"; sourceTree = "<group>"; };
+		9F3A849C1BDE222E0075C725 /* BaiDamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiDamViewController.h; sourceTree = "<group>"; };
+		9F3A849D1BDE222E0075C725 /* BaiDamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiDamViewController.m; sourceTree = "<group>"; };
 		9F3B284F1BD889B2009139E6 /* GateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateViewController.h; sourceTree = "<group>"; };
 		9F3B28501BD889B2009139E6 /* GateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateViewController.m; sourceTree = "<group>"; };
 		9F3B28521BD8A2E6009139E6 /* GateContentCheckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateContentCheckController.h; sourceTree = "<group>"; };
@@ -337,11 +349,42 @@
 		9F38C1B81BCB9EFD00989036 /* 白水坑 */ = {
 			isa = PBXGroup;
 			children = (
+				9F3A849B1BDE21F30075C725 /* 大坝巡视 */,
+				9F3A84531BDDC2570075C725 /* 防空洞 */,
 				9F3253AF1BDB6D86007AEF7D /* 柴油发电机 */,
 				9F38C1B91BCB9F7000989036 /* ReseriorViewController.h */,
 				9F38C1BA1BCB9F7000989036 /* ReseriorViewController.m */,
 			);
 			name = "白水坑";
+			sourceTree = "<group>";
+		};
+		9F3A84531BDDC2570075C725 /* 防空洞 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3A84541BDDC2AC0075C725 /* AirRaidShelterController.h */,
+				9F3A84551BDDC2AC0075C725 /* AirRaidShelterController.m */,
+				9F3A845C1BDE092B0075C725 /* ShelterContentCheckController.h */,
+				9F3A845D1BDE092B0075C725 /* ShelterContentCheckController.m */,
+			);
+			name = "防空洞";
+			sourceTree = "<group>";
+		};
+		9F3A845F1BDE0A020075C725 /* CustomLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9F3A84631BDE0A9B0075C725 /* UILabel+CustomLevel.h */,
+				9F3A84641BDE0A9B0075C725 /* UILabel+CustomLevel.m */,
+			);
+			name = CustomLabel;
+			sourceTree = "<group>";
+		};
+		9F3A849B1BDE21F30075C725 /* 大坝巡视 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3A849C1BDE222E0075C725 /* BaiDamViewController.h */,
+				9F3A849D1BDE222E0075C725 /* BaiDamViewController.m */,
+			);
+			name = "大坝巡视";
 			sourceTree = "<group>";
 		};
 		9F3B284E1BD8894A009139E6 /* 闸门 */ = {
@@ -399,7 +442,7 @@
 			children = (
 				9F2FDC161BCC8ACF00BC8673 /* customCell */,
 				9F2FDC1F1BCC96C800BC8673 /* customView */,
-				9F48EA4B1BD72BF9001BE8B4 /* DamPartrol */,
+				9F48EA4B1BD72BF9001BE8B4 /* 峡口大坝巡查 */,
 				9F48EA481BD72880001BE8B4 /* XiaKouController.h */,
 				9F48EA491BD72880001BE8B4 /* XiaKouController.m */,
 				9F48EA4C1BD72C22001BE8B4 /* Gate */,
@@ -407,7 +450,7 @@
 			name = "峡口水库";
 			sourceTree = "<group>";
 		};
-		9F48EA4B1BD72BF9001BE8B4 /* DamPartrol */ = {
+		9F48EA4B1BD72BF9001BE8B4 /* 峡口大坝巡查 */ = {
 			isa = PBXGroup;
 			children = (
 				9F38C1BC1BCBAE8F00989036 /* DamPatrolViewController.h */,
@@ -415,7 +458,7 @@
 				9F2FDC2A1BCCADA400BC8673 /* CheckViewController.h */,
 				9F2FDC2B1BCCADA400BC8673 /* CheckViewController.m */,
 			);
-			name = DamPartrol;
+			name = "峡口大坝巡查";
 			sourceTree = "<group>";
 		};
 		9F48EA4C1BD72C22001BE8B4 /* Gate */ = {
@@ -523,6 +566,7 @@
 		9F9B686B1BAA5AFD005B049E /* Until */ = {
 			isa = PBXGroup;
 			children = (
+				9F3A845F1BDE0A020075C725 /* CustomLabel */,
 				9F38C1941BCB8FA900989036 /* CustomCategory */,
 				9F9B686C1BAA5B0C005B049E /* SVProgressHUD */,
 			);
@@ -702,8 +746,10 @@
 				9F52F4541BAA51080073F72E /* AppDelegate.m in Sources */,
 				9F2FDC241BCC997400BC8673 /* WeatherView.m in Sources */,
 				9F3B28541BD8A2E6009139E6 /* GateContentCheckController.m in Sources */,
+				9F3A849E1BDE222E0075C725 /* BaiDamViewController.m in Sources */,
 				9F52F4511BAA51080073F72E /* main.m in Sources */,
 				9F2FDC131BCC899F00BC8673 /* PartrolInfoCell.m in Sources */,
+				9F3A84561BDDC2AC0075C725 /* AirRaidShelterController.m in Sources */,
 				9F3253AE1BDB4F28007AEF7D /* EmergencyEquipmentController.m in Sources */,
 				9F38C1AF1BCB994300989036 /* ItemCell.m in Sources */,
 				9F48EA581BD75099001BE8B4 /* NoteViewController.m in Sources */,
@@ -727,9 +773,11 @@
 				9F2FDC2F1BCCCE3F00BC8673 /* MainItemCell.m in Sources */,
 				9F3253AB1BDB29BB007AEF7D /* WaterContentController.m in Sources */,
 				9F2FDC2C1BCCADA400BC8673 /* CheckViewController.m in Sources */,
+				9F3A845E1BDE092B0075C725 /* ShelterContentCheckController.m in Sources */,
 				9F3B285F1BD8C1EC009139E6 /* RegularInspectionController.m in Sources */,
 				9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */,
 				9F48EA4A1BD72880001BE8B4 /* XiaKouController.m in Sources */,
+				9F3A84651BDE0A9B0075C725 /* UILabel+CustomLevel.m in Sources */,
 				9F2FDC291BCC9BB200BC8673 /* CusHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
