@@ -188,7 +188,7 @@ static int _selectRow; //选择第几行
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 2) {
-        [self performSegueWithIdentifier:@"checkContent" sender:nil];
+        [self performSegueWithIdentifier:@"baiDamContent" sender:nil];
         _selectRow = (int)indexPath.row;
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -197,7 +197,7 @@ static int _selectRow; //选择第几行
 //利用storyBoard进行传值
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"checkContent"]) {
+    if ([segue.identifier isEqualToString:@"baiDamContent"]) {
         id theSegue = segue.destinationViewController;
         //到时候可以直接传递数据源到下一级
         [theSegue setValue:[NSNumber numberWithInt:_selectRow] forKey:@"SelectRow"];

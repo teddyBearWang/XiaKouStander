@@ -227,7 +227,15 @@
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
+            //水源地检查内容
             [self performSegueWithIdentifier:@"waterContent" sender:nil];
+        }
+    }
+    else if (indexPath.section == 2)
+    {
+        if (indexPath.row != 0) {
+            //选择人员
+            [self performSegueWithIdentifier:@"waterCheckPersonSelect" sender:nil];
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

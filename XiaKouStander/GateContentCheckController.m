@@ -9,7 +9,7 @@
 #import "GateContentCheckController.h"
 #import "MainItemCell.h"
 
-@interface GateContentCheckController ()<UITableViewDelegate,UITableViewDataSource>
+@interface GateContentCheckController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 {
     NSArray *_mainList;//左侧列表的数据源
 }
@@ -22,6 +22,13 @@
 //分割线
 @property (weak, nonatomic) IBOutlet UILabel *separeterLabel;
 
+//问题框
+@property (weak, nonatomic) IBOutlet UITextView *problemTextView;
+
+//点击有问题的
+- (IBAction)tapSwitchAction:(id)sender;
+
+- (IBAction)tapBackground:(id)sender;
 @end
 
 @implementation GateContentCheckController
@@ -34,6 +41,10 @@
     self.mainTable.dataSource = self;
     self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.mainTable.backgroundColor = CELL_BG_COLOR;
+    
+    self.problemTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.problemTextView.layer.borderWidth = 0.3;
+    self.problemTextView.layer.cornerRadius = 5;
     
     _mainList = @[@"水流状态",@"漏水状态",@"闸墩",@"门槽",@"底板伸缩缝",@"通气孔",@"启闭机室",@"附属设施",@"电气设备",@"备用电源"];
 }
@@ -92,5 +103,14 @@ static NSUInteger _oldSelectIndex;
 }
 
 
-
+//假如存在问题
+- (IBAction)tapSwitchAction:(id)sender
+{
+    UISwitch *taps = (UISwitch*)sender;
+    if (!taps.isOn) {
+        self.problemTextView.hidden = NO;
+    }else{
+        self.problemTextView.hidden = YES;
+    }
+}
 @end

@@ -1,36 +1,30 @@
 //
-//  WaterContentController.m
+//  BaiDamContentController.m
 //  XiaKouStander
-//  **********水源地检查内容*********
-//  Created by teddy on 15/10/24.
+//  ********白水坑 大坝巡查的内容检查界面*********
+//  Created by teddy on 15/10/27.
 //  Copyright (c) 2015年 teddy. All rights reserved.
 //
 
-#import "WaterContentController.h"
+#import "BaiDamContentController.h"
 #import "MainItemCell.h"
 
-@interface WaterContentController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
+@interface BaiDamContentController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 {
-    NSArray *_mainList;//左侧列表的数据源
+    NSArray *_mainList;
 }
 //主列表
 @property (weak, nonatomic) IBOutlet UITableView *mainTable;
-//分割视图
-@property (weak, nonatomic) IBOutlet UIView *dividerView;
-//检查内容label
-@property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
-//检查结果
+//标题label
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+//结果
 @property (weak, nonatomic) IBOutlet UITextView *resultContentView;
-//添加备注 按钮
-@property (weak, nonatomic) IBOutlet UIButton *addNoteBtn;
-//添加备注
-- (IBAction)addNoteAction:(id)sender;
 
+//点击背景取消键盘
 - (IBAction)tapBackgroundAction:(id)sender;
-
 @end
 
-@implementation WaterContentController
+@implementation BaiDamContentController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,13 +36,12 @@
     self.mainTable.backgroundColor = CELL_BG_COLOR;
     
     self.resultContentView.delegate = self;
+    self.resultContentView.backgroundColor = [UIColor whiteColor];
     self.resultContentView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.resultContentView.layer.borderWidth = 0.3;
     self.resultContentView.layer.cornerRadius = 5.0;
     
-    self.addNoteBtn.layer.cornerRadius = 5.0;
-    
-    _mainList = @[@"植被情况(库区)",@"山体滑坡(库区)",@"非法取沙(库区)",@"乱倒垃圾(库区)",@"乱排放污水(库区)",@"饲料投放情况(库区)",@"库区清洁情况",@"其他"];
+      _mainList = @[@"坝顶",@"防浪墙",@"迎水面",@"背水面",@"坝址",@"排水系统",@"倒渗降压系统",@"观测系统"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +63,7 @@
     //主列表
     MainItemCell *cell = (MainItemCell *)[[[NSBundle mainBundle] loadNibNamed:@"MainItemCell" owner:nil options:nil] lastObject];
     cell.nameLabel.text = _mainList[indexPath.row];
-    cell.nameLabel.font = [UIFont systemFontOfSize:13];
+    cell.nameLabel.font = [UIFont systemFontOfSize:15];
     cell.bg_view.backgroundColor = CELL_BG_COLOR;
     cell.backgroundColor = CELL_BG_COLOR;
     
@@ -92,8 +85,6 @@ static NSUInteger _oldSelectIndex;
     [cell setSelectAction:YES];
     _oldSelectIndex = indexPath.row;
     
-    //主视图
-    // [childTable reloadData];
     NSLog(@"点击主视图");
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -104,7 +95,6 @@ static NSUInteger _oldSelectIndex;
     return 50;
 }
 
-
 #pragma mark - UITextViewDelegate
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -114,23 +104,10 @@ static NSUInteger _oldSelectIndex;
     return YES;
 }
 
-//添加备注
-- (IBAction)addNoteAction:(id)sender
-{
-    //添加备注
-    [self performSegueWithIdentifier:@"waterNotePush" sender:nil];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"waterNotePush"]) {
-        id theSegue = segue.destinationViewController;
-        [theSegue setValue:@"水情备注" forKey:@"titleName"];
-    }
-}
-
+//点击背景取消键盘
 - (IBAction)tapBackgroundAction:(id)sender
 {
     [self.resultContentView resignFirstResponder];
 }
+
 @end

@@ -151,6 +151,8 @@
             }else{
                 RightLabelCell *rightCell = (RightLabelCell *)[[[NSBundle mainBundle] loadNibNamed:@"RightLabelCell" owner:nil options:nil] lastObject];
                 rightCell.nameLabel.text = _list[indexPath.row];
+                rightCell.nameLabel.font = [UIFont systemFontOfSize:15];
+                rightCell.rightLabel.font = [UIFont systemFontOfSize:15];
                 rightCell.rightLabel.text = @"系统管理员";
                 rightCell.backgroundColor = CELL_BG_COLOR;
                 rightCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

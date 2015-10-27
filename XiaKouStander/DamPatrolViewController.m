@@ -203,7 +203,7 @@ static int _selectRow; //选择第几行
     if ([segue.identifier isEqualToString:@"checkContent"]) {
         id theSegue = segue.destinationViewController;
         //到时候可以直接传递数据源到下一级
-        [theSegue setValue:[NSNumber numberWithInt:_selectRow] forKey:@"SelectRow"];
+        [theSegue setValue:[NSNumber numberWithInt:_selectRow] forKey:@"selectRow"];
     }
 }
 
