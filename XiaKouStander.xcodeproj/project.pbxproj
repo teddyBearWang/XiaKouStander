@@ -72,6 +72,7 @@
 		9F52F45A1BAA51080073F72E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F52F4581BAA51080073F72E /* Main.storyboard */; };
 		9F52F45C1BAA51080073F72E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F52F45B1BAA51080073F72E /* Images.xcassets */; };
 		9F52F46B1BAA51080073F72E /* XiaKouStanderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F52F46A1BAA51080073F72E /* XiaKouStanderTests.m */; };
+		9F54333F1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54333E1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.m */; };
 		9F9B68701BAA5B0C005B049E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F9B686D1BAA5B0C005B049E /* SVProgressHUD.bundle */; };
 		9F9B68711BAA5B0C005B049E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B686F1BAA5B0C005B049E /* SVProgressHUD.m */; };
 		F780BBA10BC843F5149FB18D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F6F6473C424EE85CF52855 /* libPods.a */; };
@@ -198,6 +199,8 @@
 		9F52F4641BAA51080073F72E /* XiaKouStanderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XiaKouStanderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F52F4691BAA51080073F72E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F52F46A1BAA51080073F72E /* XiaKouStanderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaKouStanderTests.m; sourceTree = "<group>"; };
+		9F54333D1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterTelemetryCheckContentController.h; sourceTree = "<group>"; };
+		9F54333E1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterTelemetryCheckContentController.m; sourceTree = "<group>"; };
 		9F9B686D1BAA5B0C005B049E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		9F9B686E1BAA5B0C005B049E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		9F9B686F1BAA5B0C005B049E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -411,6 +414,8 @@
 			children = (
 				9F3B28561BD8A85C009139E6 /* WaterTelemetryController.h */,
 				9F3B28571BD8A85C009139E6 /* WaterTelemetryController.m */,
+				9F54333D1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.h */,
+				9F54333E1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.m */,
 			);
 			name = "水情遥测";
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				9F3A845E1BDE092B0075C725 /* ShelterContentCheckController.m in Sources */,
 				9F3B285F1BD8C1EC009139E6 /* RegularInspectionController.m in Sources */,
 				9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */,
+				9F54333F1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.m in Sources */,
 				9F48EA4A1BD72880001BE8B4 /* XiaKouController.m in Sources */,
 				9F3A84651BDE0A9B0075C725 /* UILabel+CustomLevel.m in Sources */,
 				9F2FDC291BCC9BB200BC8673 /* CusHeaderView.m in Sources */,

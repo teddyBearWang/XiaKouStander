@@ -35,7 +35,7 @@
     self.detailTable.dataSource = self;
     self.detailTable.backgroundColor = CELL_BG_COLOR;
     
-    _infoList = @[@"是否需要审批",@"维护人"];
+    _infoList = @[@"水情室",@"坝顶(水位)",@"坝顶(雨量)",@"大柴坑",@"石柱"];
     //默认为当天的日期
     _currentDate = [self getCurrentDate:[NSDate date]];
     
@@ -79,11 +79,12 @@
             break;
         case 1:
         {
-            return 2;
+            return 3;
         }
             break;
         case 2:
         {
+            //巡查内容
             return _infoList.count;
         }
             break;
@@ -115,7 +116,7 @@
         {
             
             if (indexPath.row == 0) {
-                //闸门名称
+                //水位
                 PartrolInfoCell *partrolCell = (PartrolInfoCell *)[[[NSBundle mainBundle] loadNibNamed:@"PartrolInfoCell" owner:nil options:nil] lastObject];
                 partrolCell.selectionStyle = UITableViewCellSelectionStyleNone;
                 partrolCell.backgroundColor = CELL_BG_COLOR;
@@ -124,40 +125,41 @@
                 partrolCell.valueField.delegate = self;
                 
                 partrolCell.postionLabel.font = [UIFont systemFontOfSize:15];
-                partrolCell.postionLabel.text = @" 水位";
+                partrolCell.postionLabel.text = @"  水位";
                 partrolCell.valueField.placeholder = @"请输入水位(米)";
                 return partrolCell;
-            }else{
+            }else if(indexPath.row == 1){
+                //是否需要审批
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-                cell.textLabel.text = @"  设备事项";
-                cell.backgroundColor = CELL_BG_COLOR;
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.selectionStyle = UITableViewCellSelectionStyleBlue;
                 cell.textLabel.font = [UIFont systemFontOfSize:15];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.textLabel.text = @"  是否需要审批";
+                cell.backgroundColor = CELL_BG_COLOR;
                 return cell;
+            }else{
+                //维护人
+                //子列表
+                ChildItemCell *cell = (ChildItemCell *)[[[NSBundle mainBundle] loadNibNamed:@"ChildItemCell" owner:nil options:nil] lastObject];
+                cell.backgroundColor = CELL_BG_COLOR;
+                cell.valueLabel.text = @"   维护人";
+                cell.tapSelect.on = NO;//默认关闭
+                cell.tapSelect.tag = indexPath.row;
+                return cell;
+
             }
             
         }
             break;
         case 2:
         {
-            if (indexPath.row != 0) {
-                UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-                cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-                cell.textLabel.font = [UIFont systemFontOfSize:15];
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                cell.textLabel.text = [NSString stringWithFormat:@"  %@",_infoList[indexPath.row]];
-                cell.backgroundColor = CELL_BG_COLOR;
-                
-                return cell;
-            }else{
-                //子列表
-                ChildItemCell *cell = (ChildItemCell *)[[[NSBundle mainBundle] loadNibNamed:@"ChildItemCell" owner:nil options:nil] lastObject];
-                cell.backgroundColor = CELL_BG_COLOR;
-                cell.valueLabel.text = [NSString stringWithFormat:@"  %@",_infoList[indexPath.row]];
-                cell.tapSelect.on = NO;//默认关闭
-                cell.tapSelect.tag = indexPath.row;
-                return cell;
-            }
+            //是否需要审批
+            UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            cell.textLabel.text = [NSString stringWithFormat:@"  %@",_infoList[indexPath.row]];
+            cell.backgroundColor = CELL_BG_COLOR;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
+            return cell;
         }
             break;
         default:
@@ -189,14 +191,14 @@
         case 1:
         {
             CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"巡查内容";
+            header.titleLabel.text = @"巡查信息记录";
             return header;
         }
             break;
         case 2:
         {
             CusHeaderView *header = (CusHeaderView *)[[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-            header.titleLabel.text = @"巡查信息记录";
+            header.titleLabel.text = @"巡查内容";
             return header;
         }
             break;
@@ -209,11 +211,9 @@
 static int _selectRow; //选择第几行
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
-        if (indexPath.row == 1) {
-            [self performSegueWithIdentifier:@"gateContent" sender:nil];
-            _selectRow = (int)indexPath.row;
-        }
+    if (indexPath.section == 2) {
+        [self performSegueWithIdentifier:@"watertelemetryCheck" sender:nil];
+        _selectRow = (int)indexPath.row;
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -272,6 +272,8 @@ static int _selectRow; //选择第几行
     return YES;
 }
 
-- (IBAction)saveUploadAction:(id)sender {
+- (IBAction)saveUploadAction:(id)sender
+{
+    
 }
 @end

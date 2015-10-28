@@ -18,13 +18,22 @@
 @property (weak, nonatomic) IBOutlet UITableView *mainTable;
 //内容标签
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+//问题开关
+@property (weak, nonatomic) IBOutlet UISwitch *tapSwitch;
+
 //分割标签
 @property (weak, nonatomic) IBOutlet UILabel *dividerLabel;
-//结果
+
+//异常标签
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+//异常内容
 @property (weak, nonatomic) IBOutlet UITextView *resultTextView;
 //选择检查人
 @property (weak, nonatomic) IBOutlet UIButton *checkPersonBtn;
+//选择检查人
 - (IBAction)selectCheckPersonAction:(id)sender;
+//点击问题开关
+- (IBAction)tapSwitchAction:(id)sender;
 
 //点击背景取消键盘
 - (IBAction)tabBackground:(id)sender;
@@ -42,6 +51,13 @@
     self.mainTable.backgroundColor = CELL_BG_COLOR;
     
     self.resultTextView.delegate = self;
+    self.resultTextView.layer.borderWidth = 0.3;
+    self.resultTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.resultTextView.layer.cornerRadius = 5;
+    
+    self.checkPersonBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.checkPersonBtn.layer.borderWidth = 0.3;
+    self.checkPersonBtn.layer.cornerRadius = 5;
     
     _mainList = @[@"操作人员",@"电器",@"电动机",@"制动器",@"制动轮",@"通气孔",@"减速箱",@"开式齿轮",@"拉杆",@"闸门"];
 }
@@ -106,12 +122,28 @@ static NSUInteger _oldSelectIndex;
     return YES;
 }
 
+//取消键盘
 - (IBAction)tabBackground:(id)sender
 {
     [self.resultTextView resignFirstResponder];
 }
 
 //选择检查人
-- (IBAction)selectCheckPersonAction:(id)sender {
+- (IBAction)selectCheckPersonAction:(id)sender
+{
+    
+}
+
+//点击问题开关
+- (IBAction)tapSwitchAction:(id)sender
+{
+    UISwitch *tap = (UISwitch *)sender;
+    if (!tap.isOn) {
+        self.resultTextView.hidden = NO;
+        self.resultLabel.hidden = NO;
+    }else{
+        self.resultLabel.hidden = YES;
+        self.resultTextView.hidden = YES;
+    }
 }
 @end

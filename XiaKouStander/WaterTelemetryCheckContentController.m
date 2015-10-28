@@ -1,26 +1,27 @@
 //
-//  BaiDamContentController.m
+//  WaterTelemetryCheckContentController.m
 //  XiaKouStander
-//  ********白水坑 大坝巡查的内容检查界面*********
-//  Created by teddy on 15/10/27.
+//  **********水情遥测内容检查界面************
+//  Created by teddy on 15/10/28.
 //  Copyright (c) 2015年 teddy. All rights reserved.
 //
 
-#import "BaiDamContentController.h"
+#import "WaterTelemetryCheckContentController.h"
 #import "MainItemCell.h"
 
-@interface BaiDamContentController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
+@interface WaterTelemetryCheckContentController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 {
     NSArray *_mainList;
 }
+
 //主列表
-@property (weak, nonatomic) IBOutlet UITableView *mainTable;
-//标题label
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITableView *waterTable;
+//标题label:是否运转正常
+@property (weak, nonatomic) IBOutlet UILabel *statueLabel;
 //结果
 @property (weak, nonatomic) IBOutlet UITextView *resultContentView;
 
-//状态标签:是否运转正常
+//状态标签:异常情况
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 //开关
 @property (weak, nonatomic) IBOutlet UISwitch *tapSwitch;
@@ -33,18 +34,19 @@
 
 //点击背景取消键盘
 - (IBAction)tapBackgroundAction:(id)sender;
+
 @end
 
-@implementation BaiDamContentController
+@implementation WaterTelemetryCheckContentController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.mainTable.delegate = self;
-    self.mainTable.dataSource = self;
-    self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.mainTable.backgroundColor = CELL_BG_COLOR;
+    self.waterTable.delegate = self;
+    self.waterTable.dataSource = self;
+    self.waterTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.waterTable.backgroundColor = CELL_BG_COLOR;
     
     self.resultContentView.delegate = self;
     self.resultContentView.backgroundColor = [UIColor whiteColor];
@@ -52,7 +54,8 @@
     self.resultContentView.layer.borderWidth = 0.3;
     self.resultContentView.layer.cornerRadius = 5.0;
     
-      _mainList = @[@"坝顶",@"防浪墙",@"迎水面",@"背水面",@"坝址",@"排水系统",@"倒渗降压系统",@"观测系统"];
+    _mainList = @[@"坝顶",@"防浪墙",@"迎水面",@"背水面",@"坝址",@"排水系统",@"倒渗降压系统",@"观测系统"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,11 +131,12 @@ static NSUInteger _oldSelectIndex;
     if (!tap.isOn) {
         //存在问题，所以显示
         self.resultContentView.hidden = NO;
-        self.titleLabel.hidden = NO;
+        self.resultLabel.hidden = NO;
     }else{
         //不存在问题，所以隐藏
         self.resultContentView.hidden = YES;
-        self.titleLabel.hidden = YES;
+        self.resultLabel.hidden = YES;
     }
 }
+
 @end

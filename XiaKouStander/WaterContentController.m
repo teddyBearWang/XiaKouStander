@@ -23,6 +23,11 @@
 @property (weak, nonatomic) IBOutlet UITextView *resultContentView;
 //添加备注 按钮
 @property (weak, nonatomic) IBOutlet UIButton *addNoteBtn;
+//点击有问题
+@property (weak, nonatomic) IBOutlet UISwitch *tapSwitch;
+//点击有问题开关
+- (IBAction)tapSwitchAction:(id)sender;
+
 //添加备注
 - (IBAction)addNoteAction:(id)sender;
 
@@ -119,6 +124,18 @@ static NSUInteger _oldSelectIndex;
 {
     //添加备注
     [self performSegueWithIdentifier:@"waterNotePush" sender:nil];
+}
+//点击有问题开关
+- (IBAction)tapSwitchAction:(id)sender
+{
+    UISwitch *tap = (UISwitch *)sender;
+    if (!tap.isOn) {
+        //存在问题就显示
+        self.resultContentView.hidden = NO;
+    }else{
+        //没有问题就隐藏
+        self.resultContentView.hidden = YES;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

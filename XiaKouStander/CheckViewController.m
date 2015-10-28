@@ -39,6 +39,7 @@
     mainTable.backgroundColor = CELL_BG_COLOR;
     childTable.delegate = self;
     childTable.dataSource = self;
+    childTable.backgroundColor = CELL_BG_COLOR;
     
     NSLog(@"传进来的值为:%d",[self.selectRow intValue]);
     //self.view.backgroundColor = CELL_INTRUCTION_COLOR;
