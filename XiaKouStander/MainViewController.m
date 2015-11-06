@@ -95,17 +95,26 @@
     switch (indexPath.row) {
         case 0:
         {
+            //白水坑水库
             [self performSegueWithIdentifier:@"baishuiken" sender:nil];
         }
             break;
         case 1:
         {
+            //峡口水库
            [self performSegueWithIdentifier:@"xiakou" sender:nil]; 
         }
             break;
         case 2:
         {
+            //电站
             [self performSegueWithIdentifier:@"powerStation" sender:nil];
+        }
+            break;
+        case 3:
+        {
+            //渠道检查
+            [self performSegueWithIdentifier:@"channelCheck" sender:nil];
         }
             break;
         default:

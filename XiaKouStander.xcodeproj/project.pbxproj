@@ -59,6 +59,8 @@
 		9F3B28681BD8CEB1009139E6 /* RegularTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B28671BD8CEB1009139E6 /* RegularTestController.m */; };
 		9F3B286B1BD8D5AC009139E6 /* MachineCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B286A1BD8D5AC009139E6 /* MachineCheckController.m */; };
 		9F3B286E1BD8DF78009139E6 /* RotatingEquipmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B286D1BD8DF78009139E6 /* RotatingEquipmentController.m */; };
+		9F3F7BC81BEC79AA00AF8313 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3F7BC71BEC79AA00AF8313 /* ChannelViewController.m */; };
+		9F3F7BCB1BEC7F3800AF8313 /* ChannelResultVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3F7BCA1BEC7F3800AF8313 /* ChannelResultVController.m */; };
 		9F48EA4A1BD72880001BE8B4 /* XiaKouController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48EA491BD72880001BE8B4 /* XiaKouController.m */; };
 		9F48EA4F1BD72C56001BE8B4 /* ValveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48EA4E1BD72C56001BE8B4 /* ValveViewController.m */; };
 		9F48EA531BD74A4B001BE8B4 /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F48EA521BD74A4B001BE8B4 /* add@3x.png */; };
@@ -175,6 +177,10 @@
 		9F3B286A1BD8D5AC009139E6 /* MachineCheckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineCheckController.m; sourceTree = "<group>"; };
 		9F3B286C1BD8DF78009139E6 /* RotatingEquipmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingEquipmentController.h; sourceTree = "<group>"; };
 		9F3B286D1BD8DF78009139E6 /* RotatingEquipmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingEquipmentController.m; sourceTree = "<group>"; };
+		9F3F7BC61BEC79AA00AF8313 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
+		9F3F7BC71BEC79AA00AF8313 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
+		9F3F7BC91BEC7F3800AF8313 /* ChannelResultVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelResultVController.h; sourceTree = "<group>"; };
+		9F3F7BCA1BEC7F3800AF8313 /* ChannelResultVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelResultVController.m; sourceTree = "<group>"; };
 		9F48EA481BD72880001BE8B4 /* XiaKouController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaKouController.h; sourceTree = "<group>"; };
 		9F48EA491BD72880001BE8B4 /* XiaKouController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaKouController.m; sourceTree = "<group>"; };
 		9F48EA4D1BD72C56001BE8B4 /* ValveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValveViewController.h; sourceTree = "<group>"; };
@@ -450,6 +456,17 @@
 			name = itemCell;
 			sourceTree = "<group>";
 		};
+		9F3F7BC51BEC784100AF8313 /* 渠道 */ = {
+			isa = PBXGroup;
+			children = (
+				9F3F7BC61BEC79AA00AF8313 /* ChannelViewController.h */,
+				9F3F7BC71BEC79AA00AF8313 /* ChannelViewController.m */,
+				9F3F7BC91BEC7F3800AF8313 /* ChannelResultVController.h */,
+				9F3F7BCA1BEC7F3800AF8313 /* ChannelResultVController.m */,
+			);
+			name = "渠道";
+			sourceTree = "<group>";
+		};
 		9F48EA471BD7284B001BE8B4 /* 峡口水库 */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +550,7 @@
 		9F52F44D1BAA51080073F72E /* XiaKouStander */ = {
 			isa = PBXGroup;
 			children = (
+				9F3F7BC51BEC784100AF8313 /* 渠道 */,
 				9F3B28591BD8B46A009139E6 /* 电站 */,
 				9F38C1B81BCB9EFD00989036 /* 白水坑 */,
 				9F48EA471BD7284B001BE8B4 /* 峡口水库 */,
@@ -786,6 +804,7 @@
 				9F38C1971BCB8FE100989036 /* RootViewController.m in Sources */,
 				9F38C1BB1BCB9F7000989036 /* ReseriorViewController.m in Sources */,
 				9F3B28651BD8C428009139E6 /* RightLabelCell.m in Sources */,
+				9F3F7BC81BEC79AA00AF8313 /* ChannelViewController.m in Sources */,
 				9F3B28681BD8CEB1009139E6 /* RegularTestController.m in Sources */,
 				9F2FDC2F1BCCCE3F00BC8673 /* MainItemCell.m in Sources */,
 				9F3253AB1BDB29BB007AEF7D /* WaterContentController.m in Sources */,
@@ -793,6 +812,7 @@
 				9F3A845E1BDE092B0075C725 /* ShelterContentCheckController.m in Sources */,
 				9F3B285F1BD8C1EC009139E6 /* RegularInspectionController.m in Sources */,
 				9F2FDC341BCCD0BC00BC8673 /* ChildItemCell.m in Sources */,
+				9F3F7BCB1BEC7F3800AF8313 /* ChannelResultVController.m in Sources */,
 				9F54333F1BE06A1000FB15E3 /* WaterTelemetryCheckContentController.m in Sources */,
 				9F48EA4A1BD72880001BE8B4 /* XiaKouController.m in Sources */,
 				9F3A84651BDE0A9B0075C725 /* UILabel+CustomLevel.m in Sources */,

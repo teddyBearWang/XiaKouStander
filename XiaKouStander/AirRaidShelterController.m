@@ -139,6 +139,7 @@
                 partrolCell.postionLabel.font = [UIFont systemFontOfSize:15];
                 partrolCell.postionLabel.text = @"  水位";
                 partrolCell.valueField.placeholder = @"请输入水位(米)";
+                partrolCell.valueField.delegate = self;
                 return partrolCell;
             }
 
@@ -280,13 +281,19 @@
 }
 
 
-
 - (IBAction)saveUploadAction:(id)sender
 {
     
 }
 
-
+#pragma mark - UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if ([string isEqualToString:@"\n"]) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
 
 @end
 
